@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Project Details
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .gradient-bg {
+            background: linear-gradient(90deg, rgba(0,36,61,1) 0%, rgba(9,121,99,1) 100%);
+        }
+        .sidebar-bg {
+            background: linear-gradient(180deg, rgba(26,32,44,1) 0%, rgba(45,55,72,1) 100%);
+        }
+        .hover-effects:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+        .shadow-effects {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900 font-sans">
+  <!-- Sidebar -->
+  <aside class="w-64 sidebar-bg text-white h-screen fixed">
+   <div class="p-6">
+    <h1 class="text-3xl font-bold mb-4">
+     Project Details
+    </h1>
+    <nav class="mt-6">
+     <ul>
+      <li class="mb-4 flex items-center">
+       <img alt="Home icon" class="mr-2" height="20" src="img_8.png" width="20"/>
+       <a class="hover:underline" href="index.html">
+        Home
+       </a>
+      </li>
+      <li class="mb-4 flex items-center">
+       <img alt="Team icon" class="mr-2" height="20" src="img_9.png" width="20"/>
+       <a class="hover:underline" href="team_members.html">
+        Team Members
+       </a>
+      </li>
+      <li class="mb-4 flex items-center">
+       <img alt="Settings icon" class="mr-2" height="20" src="img_4.png" width="20"/>
+       <a class="hover:underline" href="project_settings.html">
+        Project Settings
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </aside>
+  <!-- Main Content -->
+  <div class="ml-64 p-6 gradient-bg">
+   <!-- Top Bar -->
+   <header class="flex justify-between items-center py-4 px-6 bg-white shadow-effects rounded-lg">
+    <h2 class="text-2xl font-semibold">
+     Project Details
+    </h2>
+    <div class="flex items-center space-x-4">
+     <button class="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      Edit Project
+     </button>
+     <button class="bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      Delete Project
+     </button>
+     <button class="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      Add Task
+     </button>
+     <button class="bg-gradient-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      View Gantt Chart
+     </button>
+     <button class="bg-gradient-to-r from-gray-400 to-gray-600 hover:from-gray-500 hover:to-gray-700 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      Back to Dashboard
+     </button>
+    </div>
+   </header>
+   <!-- Project Overview Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Project Overview
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <p class="text-gray-700">
+      This page provides a comprehensive view of a specific project's details, including tasks, team members, milestones, and deadlines. Users can manage tasks, update project information, and view an activity log. The page supports real-time collaboration, allowing team members to see updates instantly.
+     </p>
+    </div>
+   </section>
+   <!-- Task Management Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Task Management
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <p class="text-gray-700">
+      Manage tasks within the project. Assign tasks to team members, set deadlines, and track progress.
+     </p>
+     <!-- Task List Placeholder -->
+     <ul class="mt-4">
+      <li class="bg-gray-200 p-4 rounded-lg mb-2 shadow-effects">
+       Task 1
+      </li>
+      <li class="bg-gray-200 p-4 rounded-lg mb-2 shadow-effects">
+       Task 2
+      </li>
+      <li class="bg-gray-200 p-4 rounded-lg mb-2 shadow-effects">
+       Task 3
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- Comments Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Comments
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <textarea class="w-full p-4 border rounded-lg" placeholder="Add a comment..." rows="4"></textarea>
+     <button class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded hover-effects shadow-effects">
+      Submit Comment
+     </button>
+    </div>
+   </section>
+   <!-- Activity Log Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Activity Log
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <ul>
+      <li class="mb-2">
+       User A updated Task 1
+      </li>
+      <li class="mb-2">
+       User B added a new comment
+      </li>
+      <li class="mb-2">
+       User C changed the project status
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- File Attachments Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     File Attachments
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <!-- Placeholder for file attachments -->
+     <ul>
+      <li class="mb-2">
+       Attachment 1
+      </li>
+      <li class="mb-2">
+       Attachment 2
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- Project Timeline Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Project Timeline
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <!-- Placeholder for project timeline -->
+     <p class="text-gray-700">
+      Timeline of the project's milestones and deadlines.
+     </p>
+    </div>
+   </section>
+   <!-- Project Status Section -->
+   <section class="mt-6">
+    <h3 class="text-2xl font-semibold mb-4 bg-white p-4 rounded-lg shadow-effects">
+     Project Status
+    </h3>
+    <div class="bg-white p-6 rounded-lg shadow-effects">
+     <p class="text-gray-700">
+      Current status of the project with indicators.
+     </p>
+    </div>
+   </section>
+   <!-- Footer -->
+   <footer class="mt-6 bg-white p-6 rounded-lg shadow-effects">
+    <div class="flex justify-between items-center">
+     <p class="text-gray-700">
+      © 2023 Project Management
+     </p>
+     <nav class="flex space-x-4">
+      <a class="text-gray-700 hover:text-blue-500" href="index.html">
+       Home
+      </a>
+      <a class="text-gray-700 hover:text-blue-500" href="team_members.html">
+       Team Members
+      </a>
+      <a class="text-gray-700 hover:text-blue-500" href="project_settings.html">
+       Project Settings
+      </a>
+     </nav>
+    </div>
+   </footer>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js">
+  </script>
+ </body>
+</html>

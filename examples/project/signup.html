@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Sign Up
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #6b46c1;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+    .scroll-to-top:hover {
+      background-color: #5a37a4;
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-purple-500 via-pink-600 to-red-600 text-white font-sans">
+  <header class="bg-gray-900 p-4 shadow-md">
+   <nav class="container mx-auto flex justify-between items-center">
+    <a class="text-2xl font-bold hover:text-gray-300" href="index.html">
+     WebsiteName
+    </a>
+    <div>
+     <a class="px-4 py-2 hover:text-gray-300" href="index.html">
+      Home
+     </a>
+     <a class="px-4 py-2 hover:text-gray-300" href="login.html">
+      Login
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="container mx-auto py-16">
+   <div class="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 text-gray-800">
+    <h2 class="text-3xl font-bold mb-6 text-center">
+     Create Your Account
+    </h2>
+    <form class="space-y-4" id="signupForm">
+     <div>
+      <label class="block text-sm font-medium" for="name">
+       Name
+      </label>
+      <div class="relative">
+       <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" id="name" name="name" placeholder="Full Name" required="" type="text"/>
+       <span class="tooltip absolute right-2 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-info-circle text-gray-400">
+        </i>
+        <span class="tooltiptext">
+         Enter your full name
+        </span>
+       </span>
+      </div>
+      <p class="text-red-500 text-xs mt-1 hidden" id="nameError">
+       Name is required.
+      </p>
+     </div>
+     <div>
+      <label class="block text-sm font-medium" for="email">
+       Email
+      </label>
+      <div class="relative">
+       <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" id="email" name="email" placeholder="Email Address" required="" type="email"/>
+       <span class="tooltip absolute right-2 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-info-circle text-gray-400">
+        </i>
+        <span class="tooltiptext">
+         Enter a valid email address
+        </span>
+       </span>
+      </div>
+      <p class="text-red-500 text-xs mt-1 hidden" id="emailError">
+       Invalid email format.
+      </p>
+     </div>
+     <div>
+      <label class="block text-sm font-medium" for="password">
+       Password
+      </label>
+      <div class="relative">
+       <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" id="password" name="password" placeholder="Password" required="" type="password"/>
+       <span class="tooltip absolute right-2 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-info-circle text-gray-400">
+        </i>
+        <span class="tooltiptext">
+         Use 8 or more characters with a mix of letters and numbers
+        </span>
+       </span>
+       <span class="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer" onclick="togglePasswordVisibility('password')">
+        <i class="fas fa-eye text-gray-400">
+        </i>
+       </span>
+      </div>
+      <p class="text-red-500 text-xs mt-1 hidden" id="passwordError">
+       Password is required.
+      </p>
+      <div class="text-xs mt-1" id="passwordStrength">
+      </div>
+     </div>
+     <div>
+      <label class="block text-sm font-medium" for="confirmPassword">
+       Confirm Password
+      </label>
+      <div class="relative">
+       <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="" type="password"/>
+       <span class="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer" onclick="togglePasswordVisibility('confirmPassword')">
+        <i class="fas fa-eye text-gray-400">
+        </i>
+       </span>
+      </div>
+      <p class="text-red-500 text-xs mt-1 hidden" id="confirmPasswordError">
+       Passwords do not match.
+      </p>
+     </div>
+     <div class="flex items-center">
+      <input class="mr-2" id="terms" name="terms" required="" type="checkbox"/>
+      <label class="text-sm" for="terms">
+       I agree to the
+       <a class="text-purple-500 underline" href="#">
+        terms and conditions
+       </a>
+      </label>
+     </div>
+     <div class="flex justify-between items-center mt-6">
+      <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-300" type="submit">
+       Sign Up
+      </button>
+      <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300" onclick="resetForm()" type="button">
+       Reset
+      </button>
+     </div>
+    </form>
+   </div>
+  </main>
+  <footer class="bg-gray-900 p-4 text-center">
+   <p class="text-sm">
+    © 2023 WebsiteName. All rights reserved.
+   </p>
+   <div class="mt-2">
+    <a class="text-gray-400 hover:text-white mx-2" href="#">
+     <i class="fab fa-facebook-f">
+     </i>
+    </a>
+    <a class="text-gray-400 hover:text-white mx-2" href="#">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+    <a class="text-gray-400 hover:text-white mx-2" href="#">
+     <i class="fab fa-instagram">
+     </i>
+    </a>
+    <a class="text-gray-400 hover:text-white mx-2" href="#">
+     <i class="fab fa-linkedin-in">
+     </i>
+    </a>
+   </div>
+  </footer>
+  <button class="scroll-to-top" onclick="scrollToTop()">
+   <i class="fas fa-chevron-up">
+   </i>
+  </button>
+  <script>
+   const form = document.getElementById('signupForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const termsInput = document.getElementById('terms');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    const passwordStrength = document.getElementById('passwordStrength');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      validateForm();
+    });
+
+    function resetForm() {
+      form.reset();
+      clearErrors();
+      passwordStrength.textContent = '';
+    }
+
+    function validateForm() {
+      clearErrors();
+      let isValid = true;
+
+      if (nameInput.value.trim() === '') {
+        nameError.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (!validateEmail(emailInput.value)) {
+        emailError.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (passwordInput.value.trim() === '') {
+        passwordError.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordError.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (!termsInput.checked) {
+        alert('You must agree to the terms and conditions.');
+        isValid = false;
+      }
+
+      if (isValid) {
+        window.location.href = 'dashboard.html';
+      }
+    }
+
+    function clearErrors() {
+      nameError.classList.add('hidden');
+      emailError.classList.add('hidden');
+      passwordError.classList.add('hidden');
+      confirmPasswordError.classList.add('hidden');
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    passwordInput.addEventListener('input', function() {
+      const value = passwordInput.value;
+      let strength = 'Weak';
+      let color = 'red';
+
+      if (value.length >= 8) {
+        strength = 'Medium';
+        color = 'yellow';
+      }
+
+      if (value.length >= 12) {
+        strength = 'Strong';
+        color = 'green';
+      }
+
+      passwordStrength.textContent = `Password Strength: ${strength}`;
+      passwordStrength.style.color = color;
+    });
+
+    function togglePasswordVisibility(id) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    }
+
+    window.addEventListener('scroll', function() {
+      const scrollTopButton = document.querySelector('.scroll-to-top');
+      if (window.pageYOffset > 300) {
+        scrollTopButton.style.display = 'block';
+      } else {
+        scrollTopButton.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+ </body>
+</html>

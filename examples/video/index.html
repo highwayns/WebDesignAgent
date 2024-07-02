@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+        }
+
+        .carousel img {
+            max-height: 400px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">VideoHub</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="contact.html" class="hover:underline">Contact Us</a>
+                <a href="terms.html" class="hover:underline">Terms of Service</a>
+                <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white p-8">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Welcome to VideoHub</h1>
+            <p class="text-xl mb-6">Your central hub for browsing, uploading, and watching videos</p>
+            <div class="space-x-4">
+                <a href="browse.html" class="bg-white text-blue-900 px-4 py-2 rounded shadow hover:bg-gray-200">Browse
+                    Videos</a>
+                <a href="upload.html" class="bg-white text-blue-900 px-4 py-2 rounded shadow hover:bg-gray-200">Upload
+                    Video</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Carousel -->
+    <section class="container mx-auto my-8">
+        <h2 class="text-2xl font-bold text-center mb-4">Featured Videos</h2>
+        <div class="carousel flex justify-center space-x-4">
+            <img src="https://placehold.co/600x400" alt="Featured video 1" class="rounded shadow">
+            <img src="https://placehold.co/600x400" alt="Featured video 2" class="rounded shadow">
+            <img src="https://placehold.co/600x400" alt="Featured video 3" class="rounded shadow">
+        </div>
+    </section>
+
+    <!-- User Actions -->
+    <section class="container mx-auto my-8">
+        <div class="flex justify-center space-x-4">
+            <a href="login.html" class="bg-blue-900 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Login</a>
+            <a href="signup.html" class="bg-blue-900 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Sign Up</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white p-4 mt-8">
+        <div class="container mx-auto text-center space-y-4">
+            <p>&copy; 2023 VideoHub. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:underline">Contact Information</a>
+                <a href="#" class="hover:underline">Social Media Links</a>
+                <a href="#" class="hover:underline">Subscribe to Newsletter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Example: JavaScript for handling featured video playback (using placeholders)
+        const featuredVideos = document.querySelectorAll('.carousel img');
+        featuredVideos.forEach((video, index) => {
+            video.addEventListener('click', () => {
+                alert(`Playing featured video ${index + 1}`);
+            });
+        });
+
+        // Additional interactivity can be added here
+    </script>
+</body>
+
+</html>

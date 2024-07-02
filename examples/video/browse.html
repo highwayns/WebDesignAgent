@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Videos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hover-preview:hover .thumbnail {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold">VideoHub</a>
+            </div>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="contact.html" class="hover:text-gray-300">Contact Us</a>
+                <a href="about.html" class="hover:text-gray-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8">
+        <!-- Search Bar -->
+        <div class="mb-4">
+            <input type="text" id="search" placeholder="Search videos..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Filters and Sorting -->
+        <div class="flex justify-between items-center mb-4">
+            <div class="space-x-2">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" onclick="sortVideos('date')">Sort by Date</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" onclick="sortVideos('popularity')">Sort by Popularity</button>
+            </div>
+            <div class="space-x-2">
+                <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg" onclick="navigatePage('previous')">Previous</button>
+                <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg" onclick="navigatePage('next')">Next</button>
+            </div>
+        </div>
+
+        <!-- Video Listings -->
+        <div id="video-listings" class="grid grid-cols-3 gap-4">
+            <!-- Example Video Item -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover-preview relative">
+                <img src="https://placehold.co/300x200" alt="Video thumbnail" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-2">Video Title</h3>
+                <p class="text-gray-600">Category: Technology</p>
+                <div class="thumbnail absolute top-0 left-0 bg-black bg-opacity-50 w-full h-full flex items-center justify-center hidden">
+                    <img src="https://placehold.co/300x200" alt="Thumbnail preview" class="w-2/3">
+                </div>
+            </div>
+            <!-- Add more video items similarly -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            &copy; 2023 VideoHub. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function sortVideos(criteria) {
+            // Implement sorting logic here
+            console.log(`Sorting videos by ${criteria}`);
+        }
+
+        function navigatePage(direction) {
+            // Implement pagination logic here
+            console.log(`Navigating to ${direction} page`);
+        }
+
+        // Example of defining constants for images
+        const imageInfo = {
+            imgsrc: "search.png",
+            alt: "This is an example image",
+            width: 600,
+            height: 400,
+            title: "Example image title",
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Edit Project
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js">
+  </script>
+ </head>
+ <body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-700 to-pink-500 text-white p-6 shadow-lg flex justify-between items-center">
+   <div class="text-2xl font-bold">
+    Project Management
+   </div>
+   <nav>
+    <a class="mx-2 text-gray-200 hover:text-white text-lg" href="index.html">
+     Home
+    </a>
+    <a class="mx-2 text-gray-200 hover:text-white text-lg" href="project_list.html">
+     Project List
+    </a>
+   </nav>
+  </header>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto p-6 bg-gradient-to-br from-white to-gray-100 rounded-lg shadow-lg mt-6">
+   <div class="bg-white p-8 rounded-lg shadow-md border border-gray-300">
+    <h1 class="text-4xl font-bold mb-6 text-gray-800">
+     Edit Project
+    </h1>
+    <img alt="Project Image Placeholder" class="mb-6 rounded-lg shadow-md" height="200" src="img_7.png" width="600"/>
+    <form class="space-y-6" x-data="{ title: '', description: '', startDate: '', endDate: '', teamMembers: '' }">
+     <!-- Project Title -->
+     <div>
+      <label class="block text-lg font-medium text-gray-800" for="title">
+       Project Title
+      </label>
+      <input class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500" id="title" placeholder="Enter project title" required="" type="text" x-model="title"/>
+     </div>
+     <!-- Project Description -->
+     <div>
+      <label class="block text-lg font-medium text-gray-800" for="description">
+       Description
+      </label>
+      <textarea class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500" id="description" placeholder="Enter project description" required="" x-model="description"></textarea>
+     </div>
+     <!-- Project Dates -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div>
+       <label class="block text-lg font-medium text-gray-800" for="start-date">
+        Start Date
+       </label>
+       <input class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500" id="start-date" required="" type="date" x-model="startDate"/>
+      </div>
+      <div>
+       <label class="block text-lg font-medium text-gray-800" for="end-date">
+        End Date
+       </label>
+       <input class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500" id="end-date" required="" type="date" x-model="endDate"/>
+      </div>
+     </div>
+     <!-- Team Members -->
+     <div>
+      <label class="block text-lg font-medium text-gray-800" for="team-members">
+       Assigned Team Members
+      </label>
+      <input class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500" id="team-members" placeholder="Enter team members" required="" type="text" x-model="teamMembers"/>
+     </div>
+     <!-- Buttons -->
+     <div class="flex space-x-6 mt-8">
+      <button class="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-green-600 transition duration-300 focus:outline-none" type="submit">
+       Save Changes
+      </button>
+      <a class="bg-gradient-to-r from-gray-500 to-gray-700 text-white px-6 py-3 rounded-lg hover:from-gray-600 hover:to-gray-800 transition duration-300 focus:outline-none" href="project_details.html">
+       Cancel
+      </a>
+      <button @click="deleteProject" class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-lg hover:from-red-600 hover:to-red-800 transition duration-300 focus:outline-none" type="button">
+       Delete Project
+      </button>
+     </div>
+    </form>
+   </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-pink-500 text-white p-6 text-center shadow-lg mt-6">
+   <p>
+    © 2023 Project Management. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   function deleteProject() {
+            if (confirm('Are you sure you want to delete this project?')) {
+                // Add your delete project logic here
+                alert('Project deleted');
+            }
+        }
+  </script>
+ </body>
+</html>

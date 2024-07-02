@@ -200,7 +200,7 @@ class Dalle3_llm(base_img_llm):
     def _get_img(self,prompt, save_path):
         img_client = self.client
         result = img_client.images.generate(
-            model="dalle3",
+            model="dall-e-3",
             prompt=prompt,
             n=1,
             timeout=180
@@ -213,7 +213,7 @@ class Dalle3_llm(base_img_llm):
         # Log token usage
         with open(token_log_file, "r") as f:
             tokens = json.load(f)
-        current_model = "dalle3"
+        current_model = "dall-e-3"
         if current_model not in tokens:
             tokens[current_model] = 0
         tokens[current_model] += 1
@@ -236,7 +236,7 @@ class Dalle3_llm(base_img_llm):
     async def _get_img_async(self,prompt, save_path):
         img_client = self.async_client
         result = await img_client.images.generate(
-            model="dalle3",
+            model="dall-e-3",
             prompt=prompt,
             n=1,
             timeout=180
@@ -249,7 +249,7 @@ class Dalle3_llm(base_img_llm):
         # Log token usage
         with open(token_log_file, "r") as f:
             tokens = json.load(f)
-        current_model = "dalle3"
+        current_model = "dall-e-3"
         if current_model not in tokens:
             tokens[current_model] = 0
         tokens[current_model] += 1

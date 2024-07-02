@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Upload Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional Tailwind CSS customization */
+        @layer utilities {
+            .bg-gradient-to-br {
+                background: linear-gradient(to bottom right, #6b73ff 0%, #000dff 100%);
+            }
+            .border-gradient {
+                border-image: linear-gradient(to bottom right, #6b73ff, #000dff) 1;
+            }
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the tooltip element */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 via-blue-100 to-gray-100 font-sans leading-normal tracking-normal">
+<!-- Navigation Bar -->
+<nav class="bg-gradient-to-r from-blue-500 to-indigo-700 p-4 text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a class="text-lg font-bold hover:underline" href="index.html">Home</a>
+            <a class="ml-6 text-lg font-bold hover:underline" href="browse.html">Browse Videos</a>
+        </div>
+    </div>
+</nav>
+<!-- Main Content -->
+<div class="container mx-auto mt-10">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6 text-center">Upload Your Video</h1>
+        <!-- File Upload Form -->
+        <form class="space-y-4" id="uploadForm">
+            <!-- File Input -->
+            <div class="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer transition-all duration-300 ease-in-out" id="dropzone">
+                <input accept="video/*" class="hidden" id="videoFile" type="file"/>
+                <p class="text-gray-500">Drag and drop your video here, or click to select a file</p>
+            </div>
+            <!-- Metadata Input Fields with Tooltips -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="relative tooltip">
+                    <label class="text-gray-700 font-bold">Title</label>
+                    <input class="mt-1 block w-full border border-gray-300 rounded-md p-2" id="videoTitle" placeholder="Enter video title" type="text"/>
+                    <span class="tooltiptext">Enter the title of your video.</span>
+                </div>
+                <div class="relative tooltip">
+                    <label class="text-gray-700 font-bold">Description</label>
+                    <textarea class="mt-1 block w-full border border-gray-300 rounded-md p-2" id="videoDescription" placeholder="Enter video description"></textarea>
+                    <span class="tooltiptext">Provide a brief description of your video.</span>
+                </div>
+            </div>
+            <!-- Thumbnail Preview -->
+            <div class="mt-6" id="thumbnailPreview">
+                <img alt="Thumbnail Preview" class="w-full h-auto rounded-md" src="https://placehold.co/300x200" />
+            </div>
+            <!-- Progress Bar -->
+            <div class="mt-6">
+                <div class="relative pt-1">
+                    <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-blue-200">
+                        <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-blue-500 to-blue-700" id="progressBar" style="width:0%; transition: width 0.5s;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="flex justify-end space-x-4">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-all duration-300 ease-in-out transform hover:scale-105" onclick="submitUpload()" type="button">Submit</button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-all duration-300 ease-in-out transform hover:scale-105" onclick="cancelUpload()" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- JavaScript for handling the upload, validation, and progress -->
+<script>
+    const dropzone = document.getElementById('dropzone');
+    const videoFileInput = document.getElementById('videoFile');
+    const progressBar = document.getElementById('progressBar');
+    const thumbnailPreview = document.getElementById('thumbnailPreview');
+
+    dropzone.addEventListener('click', () => videoFileInput.click());
+
+    videoFileInput.addEventListener('change', handleFileSelect);
+
+    dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('bg-gray-200');
+    });
+
+    dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('bg-gray-200');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('bg-gray-200');
+        videoFileInput.files = e.dataTransfer.files;
+        handleFileSelect();
+    });
+
+    function handleFileSelect() {
+        const file = videoFileInput.files[0];
+
+        if (file && file.type.startsWith('video/')) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                thumbnailPreview.querySelector('img').src = e.target.result;
+                thumbnailPreview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert('Invalid file type. Please select a video file.');
+        }
+    }
+
+    function submitUpload() {
+        const file = videoFileInput.files[0];
+        if (!file) {
+            alert('Please select a video file to upload.');
+            return;
+        }
+
+        const videoTitle = document.getElementById('videoTitle').value.trim();
+        const videoDescription = document.getElementById('videoDescription').value.trim();
+
+        if (!videoTitle || !videoDescription) {
+            alert('Please fill out all metadata fields.');
+            return;
+        }
+
+        // Simulate an upload process
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                alert('Upload successful!');
+            }
+        }, 500);
+    }
+
+    function cancelUpload() {
+        videoFileInput.value = '';
+        document.getElementById('uploadForm').reset();
+        progressBar.style.width = '0%';
+        thumbnailPreview.classList.add('hidden');
+    }
+</script>
+</body>
+</html>
