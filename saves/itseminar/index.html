@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT Summer Seminar
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom CSS for sticky navbar */
+    .sticky-nav {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .nav-link:hover {
+      color: #ffcc00;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-button:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .overview {
+      background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/800x600') no-repeat center center;
+      background-size: cover;
+      color: white;
+    }
+
+    .countdown {
+      background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+    }
+
+    .countdown-text {
+      color: #00796b;
+      animation: blink 1s infinite;
+    }
+
+    .news-item:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonials {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      color: white;
+    }
+
+    .testimonial {
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .faq-item h3:hover {
+      color: #ffcc00;
+    }
+
+    .footer-icons a {
+      transition: color 0.3s ease-in-out;
+    }
+
+    .footer-icons a:hover {
+      color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+ </head>
+ <body class="bg-blue-50 text-gray-900 font-sans">
+  <!-- Navigation Bar -->
+  <nav class="sticky-nav text-white shadow-lg">
+   <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+    <div class="text-xl font-bold">
+     IT Summer Seminar
+    </div>
+    <ul class="flex space-x-6">
+     <li>
+      <a class="nav-link" href="about.html">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="schedule.html">
+       Schedule
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="speakers.html">
+       Speakers
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="register.html">
+       Register
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="contact.html">
+       Contact
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="faq.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero py-24 text-center">
+   <div class="container mx-auto">
+    <h1 class="text-4xl font-bold mb-4 text-white">
+     Welcome to the IT Summer Seminar
+    </h1>
+    <p class="text-xl mb-6 text-white">
+     Join us for an engaging and informative event!
+    </p>
+    <a class="hero-button bg-white text-blue-700 py-2 px-4 rounded-full shadow-md transition duration-300" href="register.html">
+     Register Now
+    </a>
+   </div>
+  </section>
+  <!-- Overview Section -->
+  <section class="overview py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Overview of the Seminar
+    </h2>
+    <p class="text-lg max-w-2xl mx-auto">
+     The IT Summer Seminar is designed to provide IT professionals with the latest insights and trends in the industry. Attend workshops, listen to keynote speakers, and network with peers.
+    </p>
+   </div>
+  </section>
+  <!-- Countdown Timer Section -->
+  <section class="countdown py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8 countdown-text">
+     Countdown to the Event
+    </h2>
+    <div class="text-4xl font-mono countdown-text" id="countdown">
+    </div>
+   </div>
+  </section>
+  <!-- Latest News and Updates Section -->
+  <section class="news py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Latest News and Updates
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- News Item 1 -->
+     <div class="news-item bg-white shadow-md p-6 rounded-lg">
+      <img alt="News 1" class="mb-4 rounded-lg" height="200" src="img_6.png" width="300"/>
+      <h3 class="text-2xl font-bold mb-2">
+       News Title 1
+      </h3>
+      <p class="text-gray-700">
+       Brief description of the news item goes here.
+      </p>
+     </div>
+     <!-- News Item 2 -->
+     <div class="news-item bg-white shadow-md p-6 rounded-lg">
+      <img alt="News 2" class="mb-4 rounded-lg" height="200" src="img_10.png" width="300"/>
+      <h3 class="text-2xl font-bold mb-2">
+       News Title 2
+      </h3>
+      <p class="text-gray-700">
+       Brief description of the news item goes here.
+      </p>
+     </div>
+     <!-- News Item 3 -->
+     <div class="news-item bg-white shadow-md p-6 rounded-lg">
+      <img alt="News 3" class="mb-4 rounded-lg" height="200" src="img_8.png" width="300"/>
+      <h3 class="text-2xl font-bold mb-2">
+       News Title 3
+      </h3>
+      <p class="text-gray-700">
+       Brief description of the news item goes here.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="testimonials py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Testimonials
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Testimonial 1 -->
+     <div class="testimonial bg-white shadow-md p-6 rounded-lg">
+      <p class="text-gray-700 mb-4">
+       "This seminar was incredibly insightful and provided me with new perspectives on IT trends."
+      </p>
+      <h3 class="text-2xl font-bold">
+       - Jane Doe
+      </h3>
+     </div>
+     <!-- Testimonial 2 -->
+     <div class="testimonial bg-white shadow-md p-6 rounded-lg">
+      <p class="text-gray-700 mb-4">
+       "Excellent speakers and well-organized sessions. Highly recommended!"
+      </p>
+      <h3 class="text-2xl font-bold">
+       - John Smith
+      </h3>
+     </div>
+     <!-- Testimonial 3 -->
+     <div class="testimonial bg-white shadow-md p-6 rounded-lg">
+      <p class="text-gray-700 mb-4">
+       "A must-attend event for IT professionals looking to stay ahead in the industry."
+      </p>
+      <h3 class="text-2xl font-bold">
+       - Emily Johnson
+      </h3>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Gallery Section -->
+  <section class="gallery py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Gallery of Past Events
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Gallery Image 1 -->
+     <div class="gallery-item">
+      <img alt="Event 1" class="rounded-lg shadow-md" height="200" src="img_3.png" width="300"/>
+     </div>
+     <!-- Gallery Image 2 -->
+     <div class="gallery-item">
+      <img alt="Event 2" class="rounded-lg shadow-md" height="200" src="img_4.png" width="300"/>
+     </div>
+     <!-- Gallery Image 3 -->
+     <div class="gallery-item">
+      <img alt="Event 3" class="rounded-lg shadow-md" height="200" src="img_2.png" width="300"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Interactive Map Section -->
+  <section class="map bg-blue-100 py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Event Location
+    </h2>
+    <div class="w-full h-64 rounded-lg shadow-md" id="map">
+     <iframe allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509166!2d144.9537353153158!3d-37.81627974202101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2ecec4a7f0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1615265885951!5m2!1sen!2sau" style="border:0;" width="100%">
+     </iframe>
+    </div>
+   </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="faq py-16">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Frequently Asked Questions
+    </h2>
+    <div class="max-w-4xl mx-auto">
+     <div class="faq-item mb-4">
+      <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleFAQ(this)">
+       Question 1
+      </h3>
+      <p class="text-gray-700 hidden">
+       Answer to the question goes here.
+      </p>
+     </div>
+     <div class="faq-item mb-4">
+      <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleFAQ(this)">
+       Question 2
+      </h3>
+      <p class="text-gray-700 hidden">
+       Answer to the question goes here.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-4">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 IT Summer Seminar. All rights reserved.
+    </p>
+    <ul class="flex justify-center space-x-4 mt-2 footer-icons">
+     <li>
+      <a class="hover:text-gray-300" href="privacy_policy.html">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-300" href="terms_of_service.html">
+       Terms of Service
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <script>
+   // Countdown Timer Script
+    const countdown = () => {
+      const countDate = new Date('August 1, 2023 00:00:00').getTime();
+      const now = new Date().getTime();
+      const gap = countDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const textDay = Math.floor(gap / day);
+      const textHour = Math.floor((gap % day) / hour);
+      const textMinute = Math.floor((gap % hour) / minute);
+      const textSecond = Math.floor((gap % minute) / second);
+
+      document.getElementById('countdown').innerText = `${textDay}d ${textHour}h ${textMinute}m ${textSecond}s`;
+    };
+
+    setInterval(countdown, 1000);
+
+    // Map Initialization (example placeholder)
+    const map = document.getElementById('map');
+    map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509166!2d144.9537353153158!3d-37.81627974202101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2ecec4a7f0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1615265885951!5m2!1sen!2sau" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
+
+    // FAQ Toggle Function
+    const toggleFAQ = (element) => {
+      const answer = element.nextElementSibling;
+      answer.classList.toggle('hidden');
+    };
+  </script>
+ </body>
+</html>

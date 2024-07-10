@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Terms of Service
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+    }
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .section {
+      transition: transform 0.3s, opacity 0.3s;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-section {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1600x900');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+ </head>
+ <body class="text-gray-900 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-blue-500 to-teal-500 text-white py-4 shadow-lg">
+   <div class="container mx-auto flex justify-between items-center">
+    <a class="text-xl font-bold flex items-center" href="index.html">
+     <img alt="School Logo" class="mr-2" height="40" src="img_7.png" width="40"/>
+     School
+    </a>
+    <div>
+     <a class="nav-link px-4 py-2 rounded" href="index.html">
+      Home
+     </a>
+     <a class="nav-link px-4 py-2 rounded" href="courses.html">
+      Courses
+     </a>
+     <a class="nav-link px-4 py-2 rounded" href="about.html">
+      About Us
+     </a>
+     <a class="nav-link px-4 py-2 rounded" href="contact.html">
+      Contact
+     </a>
+     <a class="nav-link px-4 py-2 rounded" href="login.html">
+      Login
+     </a>
+     <a class="nav-link px-4 py-2 rounded" href="privacy.html">
+      Privacy Policy
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <div class="hero-section text-white text-center py-16">
+   <h1 class="text-4xl font-bold mb-4">
+    Terms of Service
+   </h1>
+   <p class="text-lg">
+    Outlining the rules, regulations, and agreements that users must adhere to while using our services.
+   </p>
+  </div>
+  <!-- Main Content -->
+  <div class="container mx-auto py-8">
+   <!-- Table of Contents -->
+   <div class="bg-gray-100 p-6 rounded shadow mb-6">
+    <h2 class="text-2xl font-semibold mb-3">
+     Table of Contents
+    </h2>
+    <ul class="list-disc list-inside">
+     <li class="flex items-center">
+      <span class="mr-2">
+       📋
+      </span>
+      <a class="text-blue-600 hover:underline" href="#user-responsibilities">
+       User Responsibilities
+      </a>
+     </li>
+     <li class="flex items-center">
+      <span class="mr-2">
+       ⚖️
+      </span>
+      <a class="text-blue-600 hover:underline" href="#intellectual-property">
+       Intellectual Property Rights
+      </a>
+     </li>
+     <li class="flex items-center">
+      <span class="mr-2">
+       🛡️
+      </span>
+      <a class="text-blue-600 hover:underline" href="#limitation-of-liability">
+       Limitation of Liability
+      </a>
+     </li>
+     <li class="flex items-center">
+      <span class="mr-2">
+       📄
+      </span>
+      <a class="text-blue-600 hover:underline" href="#download-pdf">
+       Download PDF
+      </a>
+     </li>
+    </ul>
+   </div>
+   <!-- Sections -->
+   <div class="bg-white p-8 rounded shadow mb-6 section">
+    <h2 class="text-2xl font-semibold mb-4" id="user-responsibilities">
+     User Responsibilities
+    </h2>
+    <p class="mb-4">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+    </p>
+   </div>
+   <div class="bg-gray-50 p-8 rounded shadow mb-6 section">
+    <h2 class="text-2xl font-semibold mb-4" id="intellectual-property">
+     Intellectual Property Rights
+    </h2>
+    <p class="mb-4">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+    </p>
+   </div>
+   <div class="bg-white p-8 rounded shadow mb-6 section">
+    <h2 class="text-2xl font-semibold mb-4" id="limitation-of-liability">
+     Limitation of Liability
+    </h2>
+    <p class="mb-4">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+    </p>
+   </div>
+   <!-- Download PDF Section -->
+   <div class="bg-gray-50 p-8 rounded shadow mb-6 section" id="download-pdf">
+    <h2 class="text-2xl font-semibold mb-4">
+     Download PDF
+    </h2>
+    <p class="mb-4">
+     For your convenience, you can download the full Terms of Service as a PDF document.
+    </p>
+    <a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" download="" href="terms.pdf">
+     Download PDF
+    </a>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-500 to-teal-500 text-white py-4">
+   <div class="container mx-auto text-center">
+    <p class="mb-2">
+     © 2023 School. All rights reserved.
+    </p>
+    <div class="flex justify-center space-x-4">
+     <a class="hover:text-gray-300 flex items-center" href="#">
+      <img alt="Facebook Icon" class="mr-1" height="20" src="img_8.png" width="20"/>
+      Facebook
+     </a>
+     <a class="hover:text-gray-300 flex items-center" href="#">
+      <img alt="Twitter Icon" class="mr-1" height="20" src="img_10.png" width="20"/>
+      Twitter
+     </a>
+     <a class="hover:text-gray-300 flex items-center" href="#">
+      <img alt="LinkedIn Icon" class="mr-1" height="20" src="img_9.png" width="20"/>
+      LinkedIn
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Optional JavaScript for interactivity -->
+  <script>
+   // JavaScript for smooth scrolling to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // JavaScript for section animation on scroll
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT WebTV - Mission
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js">
+  </script>
+  <style>
+   .carousel-item {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-item.hidden {
+            opacity: 0;
+        }
+
+        .carousel-item.visible {
+            opacity: 1;
+        }
+
+        .hover-zoom:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+  </style>
+ </head>
+ <body class="bg-gradient-to-b from-gray-800 to-gray-900 text-white font-sans">
+  <header class="bg-gradient-to-r from-purple-800 to-indigo-800 py-4">
+   <nav class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center">
+     <img alt="Logo" class="w-10 h-10 mr-3" height="100" src="img_12.png" width="100"/>
+     <div class="text-2xl font-bold">
+      IT WebTV
+     </div>
+    </div>
+    <div class="space-x-4">
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="index.html">
+      Home
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="about.html">
+      About Us
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="videos.html">
+      Videos
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="contact.html">
+      Contact
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="team.html">
+      Our Team
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="careers.html">
+      Careers
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="container mx-auto py-12 bg-gradient-to-b from-gray-900 to-gray-800">
+   <section class="text-center mb-12 fade-in">
+    <h1 class="text-4xl font-bold mb-4">
+     Our Mission
+    </h1>
+    <p class="text-lg leading-relaxed">
+     At IT WebTV, our mission is to deliver the most engaging and informative
+                content to our audience. We are dedicated to continuous innovation and providing outstanding service to
+                our viewers and clients.
+    </p>
+   </section>
+   <section class="mb-12">
+    <div class="relative hover-zoom">
+     <img alt="An engaging visual representation of IT WebTV's mission" class="w-full h-96 object-cover rounded-lg shadow-lg" height="900" src="img_5.png" width="1600"/>
+     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-900 rounded-lg">
+      <div class="absolute bottom-4 left-4 text-xl font-bold">
+       Empowering Through Innovation
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition">
+      <div class="flex items-center mb-4">
+       <img alt="Vision Icon" class="w-10 h-10 mr-3" height="100" src="img_18.png" width="100"/>
+       <h2 class="text-2xl font-bold">
+        Our Vision
+       </h2>
+      </div>
+      <p>
+       To be the leading provider of technology-focused content, inspiring creativity and innovation in
+                        our viewers.
+      </p>
+     </div>
+     <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition">
+      <div class="flex items-center mb-4">
+       <img alt="Values Icon" class="w-10 h-10 mr-3" height="100" src="img_20.png" width="100"/>
+       <h2 class="text-2xl font-bold">
+        Our Values
+       </h2>
+      </div>
+      <p>
+       Integrity, innovation, and excellence are at the core of everything we do. We strive to maintain
+                        the highest standards in our content and interactions.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="mb-12">
+    <h2 class="text-3xl font-bold text-center mb-8">
+     Our Achievements
+    </h2>
+    <div class="relative">
+     <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 opacity-50 rounded-lg">
+     </div>
+     <div class="relative z-10 p-6 bg-gray-800 rounded-lg shadow-lg">
+      <div class="timeline grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="timeline-item fade-in">
+        <div class="timeline-content">
+         <h3 class="font-bold text-xl mb-2">
+          2020
+         </h3>
+         <p>
+          Launched our first series of technology tutorials.
+         </p>
+        </div>
+       </div>
+       <div class="timeline-item fade-in">
+        <div class="timeline-content">
+         <h3 class="font-bold text-xl mb-2">
+          2021
+         </h3>
+         <p>
+          Reached 1 million subscribers on our platform.
+         </p>
+        </div>
+       </div>
+       <div class="timeline-item fade-in">
+        <div class="timeline-content">
+         <h3 class="font-bold text-xl mb-2">
+          2022
+         </h3>
+         <p>
+          Expanded our content to cover new and emerging technologies.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="mb-12">
+    <h2 class="text-3xl font-bold text-center mb-8">
+     Testimonials
+    </h2>
+    <div class="relative" x-data="{ activeSlide: 0, slides: [0, 1, 2, 3, 4] }">
+     <div class="carousel-item" x-show="activeSlide === 0">
+      <blockquote class="bg-gray-800 p-6 rounded-lg shadow-lg">
+       <p>
+        "IT WebTV has transformed the way we approach technology. Their content is both engaging and
+                            informative."
+       </p>
+       <footer class="mt-4">
+        - Jane Doe, CEO of TechCorp
+       </footer>
+      </blockquote>
+     </div>
+     <div class="carousel-item hidden" x-show="activeSlide === 1">
+      <blockquote class="bg-gray-800 p-6 rounded-lg shadow-lg">
+       <p>
+        "The innovation and creativity behind IT WebTV's content are unmatched. They are a leader in
+                            the tech space."
+       </p>
+       <footer class="mt-4">
+        - John Smith, CTO of Innovate Inc.
+       </footer>
+      </blockquote>
+     </div>
+     <div class="carousel-item hidden" x-show="activeSlide === 2">
+      <blockquote class="bg-gray-800 p-6 rounded-lg shadow-lg">
+       <p>
+        "Their tutorials have helped our team stay ahead of the curve in the rapidly evolving tech
+                            landscape."
+       </p>
+       <footer class="mt-4">
+        - Sarah Lee, Lead Developer at CodeWorks
+       </footer>
+      </blockquote>
+     </div>
+     <div class="carousel-item hidden" x-show="activeSlide === 3">
+      <blockquote class="bg-gray-800 p-6 rounded-lg shadow-lg">
+       <p>
+        "IT WebTV's insights and analyses are crucial for our strategic planning and innovation."
+       </p>
+       <footer class="mt-4">
+        - Michael Brown, CEO of FutureTech
+       </footer>
+      </blockquote>
+     </div>
+     <div class="carousel-item hidden" x-show="activeSlide === 4">
+      <blockquote class="bg-gray-800 p-6 rounded-lg shadow-lg">
+       <p>
+        "Their comprehensive coverage of emerging technologies has been incredibly beneficial for our
+                            research team."
+       </p>
+       <footer class="mt-4">
+        - Emily White, Research Director at TechInsights
+       </footer>
+      </blockquote>
+     </div>
+     <div class="flex justify-center mt-6 space-x-4">
+      <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
+       Previous
+      </button>
+      <button @click="activeSlide = (activeSlide + 1) % slides.length" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
+       Next
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Our Video
+    </h2>
+    <video class="w-full rounded-lg shadow-lg" controls="">
+     <source src="mission_video.mp4" type="video/mp4"/>
+     Your browser does not support the video tag.
+    </video>
+    <p class="mt-4 text-lg">
+     Watch this video to learn more about our mission and the innovative work we do at IT WebTV.
+    </p>
+   </section>
+  </main>
+  <footer class="bg-gradient-to-r from-purple-800 to-indigo-800 py-6">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 IT WebTV. All rights reserved.
+    </p>
+    <div class="flex justify-center space-x-4 mt-4">
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="#">
+      <img alt="Facebook" class="w-6 h-6" height="100" src="img_24.png" width="100"/>
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="#">
+      <img alt="Twitter" class="w-6 h-6" height="100" src="img_25.png" width="100"/>
+     </a>
+     <a class="hover:text-yellow-500 transition-colors duration-300" href="#">
+      <img alt="Instagram" class="w-6 h-6" height="100" src="img_27.png" width="100"/>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener('alpine:init', () => {
+            Alpine.data('carousel', () => ({
+                activeSlide: 0,
+                slides: [0, 1, 2, 3, 4],
+                next() {
+                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+                },
+                prev() {
+                    this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+                }
+            }));
+        });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   School Landing Page
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white shadow-lg sticky top-0 z-50">
+   <div class="container mx-auto flex justify-between items-center p-4">
+    <div class="text-2xl font-bold">
+     School Name
+    </div>
+    <nav class="space-x-4">
+     <a class="hover:text-gray-200" href="index.html">
+      Home
+     </a>
+     <a class="hover:text-gray-200" href="courses.html">
+      Courses
+     </a>
+     <a class="hover:text-gray-200" href="about.html">
+      About Us
+     </a>
+     <a class="hover:text-gray-200" href="contact.html">
+      Contact
+     </a>
+     <a class="hover:text-gray-200" href="login.html">
+      Login
+     </a>
+     <a class="hover:text-gray-200" href="register.html">
+      Register
+     </a>
+     <a class="hover:text-gray-200" href="blog.html">
+      Blog
+     </a>
+    </nav>
+   </div>
+  </header>
+  <!-- Banner -->
+  <section class="relative bg-cover bg-center" style="background-image: url('local-image.jpg')">
+   <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-50">
+   </div>
+   <div class="container mx-auto text-center py-32 relative">
+    <h1 class="text-5xl font-bold text-white mb-4">
+     Welcome to Our School
+    </h1>
+    <p class="text-xl text-white mb-8">
+     Providing top-notch IT training programs to shape your future.
+    </p>
+    <a class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition" href="courses.html">
+     Explore Courses
+    </a>
+   </div>
+  </section>
+  <!-- Featured Courses Carousel -->
+  <section class="container mx-auto py-12">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    Featured Courses
+   </h2>
+   <div class="carousel relative">
+    <div class="carousel-inner relative overflow-hidden w-full">
+     <!-- Slide 1 -->
+     <div class="carousel-item active relative float-left w-full">
+      <img alt="Course 1 image description" class="block w-full" height="400" src="img_16.png" width="600"/>
+      <div class="carousel-caption hidden md:block absolute text-center">
+       <h5 class="text-xl">
+        Course Title 1
+       </h5>
+       <p>
+        Course description goes here.
+       </p>
+      </div>
+     </div>
+     <!-- Slide 2 -->
+     <div class="carousel-item relative float-left w-full">
+      <img alt="Course 2 image description" class="block w-full" height="400" src="img_20.png" width="600"/>
+      <div class="carousel-caption hidden md:block absolute text-center">
+       <h5 class="text-xl">
+        Course Title 2
+       </h5>
+       <p>
+        Course description goes here.
+       </p>
+      </div>
+     </div>
+     <!-- Slide 3 -->
+     <div class="carousel-item relative float-left w-full">
+      <img alt="Course 3 image description" class="block w-full" height="400" src="img_17.png" width="600"/>
+      <div class="carousel-caption hidden md:block absolute text-center">
+       <h5 class="text-xl">
+        Course Title 3
+       </h5>
+       <p>
+        Course description goes here.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Newsletter Subscription Form -->
+  <section class="bg-blue-100 py-12">
+   <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">
+     Subscribe to Our Newsletter
+    </h2>
+    <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+     <input class="w-full p-3 rounded mb-4 border" placeholder="Enter your email" type="email"/>
+     <button class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition" type="submit">
+      Subscribe
+     </button>
+    </form>
+   </div>
+  </section>
+  <!-- Interactive Testimonials Carousel -->
+  <section class="container mx-auto py-12">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    What Our Students Say
+   </h2>
+   <div class="carousel relative">
+    <div class="carousel-inner relative overflow-hidden w-full">
+     <!-- Testimonial 1 -->
+     <div class="carousel-item active relative float-left w-full">
+      <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+       <img alt="Student 1 avatar description" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_18.png" width="100"/>
+       <p class="text-gray-700 mb-4">
+        "The courses are well-structured and the instructors are very knowledgeable."
+       </p>
+       <h5 class="text-xl font-bold">
+        Student Name
+       </h5>
+      </div>
+     </div>
+     <!-- Testimonial 2 -->
+     <div class="carousel-item relative float-left w-full">
+      <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+       <img alt="Student 2 avatar description" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_15.png" width="100"/>
+       <p class="text-gray-700 mb-4">
+        "I learned so much from the hands-on projects and real-world examples."
+       </p>
+       <h5 class="text-xl font-bold">
+        Student Name
+       </h5>
+      </div>
+     </div>
+     <!-- Testimonial 3 -->
+     <div class="carousel-item relative float-left w-full">
+      <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+       <img alt="Student 3 avatar description" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_19.png" width="100"/>
+       <p class="text-gray-700 mb-4">
+        "The community is very supportive and I made great connections."
+       </p>
+       <h5 class="text-xl font-bold">
+        Student Name
+       </h5>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white py-8">
+   <div class="container mx-auto flex justify-between items-center">
+    <div>
+     <p>
+      © 2023 School Name. All rights reserved.
+     </p>
+     <div class="space-x-4">
+      <a class="hover:text-gray-200" href="privacy.html">
+       Privacy Policy
+      </a>
+      <a class="hover:text-gray-200" href="terms.html">
+       Terms of Service
+      </a>
+      <a class="hover:text-gray-200" href="faq.html">
+       FAQ
+      </a>
+     </div>
+    </div>
+    <div class="space-x-4">
+     <a class="hover:text-gray-200" href="#">
+      Facebook
+     </a>
+     <a class="hover:text-gray-200" href="#">
+      Twitter
+     </a>
+     <a class="hover:text-gray-200" href="#">
+      LinkedIn
+     </a>
+     <a class="hover:text-gray-200" href="#">
+      Instagram
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Scripts -->
+  <script>
+   // JavaScript for the carousel functionality
+  </script>
+ </body>
+</html>

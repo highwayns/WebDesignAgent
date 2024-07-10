@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Contact Us
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   /* Additional custom styles */
+      .gradient-bg {
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hover-effect:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+      }
+      .shadow-effect {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .input-icon {
+        position: relative;
+      }
+      .input-icon input {
+        padding-left: 2.5rem;
+      }
+      .input-icon::before {
+        content: attr(data-icon);
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.25rem;
+        color: #6b7280;
+      }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-900 font-sans">
+  <!-- Navigation Links -->
+  <nav class="gradient-bg p-6 text-white shadow-lg">
+   <div class="container mx-auto flex justify-between items-center">
+    <div>
+     <a class="mr-6 text-lg font-bold hover:underline hover:text-yellow-300" href="index.html">
+      Back to Home
+     </a>
+     <a class="text-lg font-bold hover:underline hover:text-yellow-300" href="admissions.html">
+      Admissions
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Contact Form Section -->
+  <section class="container mx-auto p-8 mt-8 bg-white gradient-bg shadow-lg rounded-lg">
+   <h2 class="text-3xl font-extrabold mb-6 gradient-text">
+    Contact Us
+   </h2>
+   <form class="space-y-6" id="contactForm">
+    <div class="input-icon" data-icon="👤">
+     <label class="block text-sm font-medium text-white" for="name">
+      Name
+     </label>
+     <input class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="name" name="name" required="" type="text"/>
+     <small class="text-gray-200">
+      Please enter your full name.
+     </small>
+    </div>
+    <div class="input-icon" data-icon="📧">
+     <label class="block text-sm font-medium text-white" for="email">
+      Email
+     </label>
+     <input class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="email" name="email" required="" type="email"/>
+     <small class="text-gray-200">
+      We'll never share your email with anyone else.
+     </small>
+    </div>
+    <div class="input-icon" data-icon="✉️">
+     <label class="block text-sm font-medium text-white" for="subject">
+      Subject
+     </label>
+     <input class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="subject" name="subject" required="" type="text"/>
+    </div>
+    <div class="input-icon" data-icon="💬">
+     <label class="block text-sm font-medium text-white" for="message">
+      Message
+     </label>
+     <textarea class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="message" name="message" required="" rows="5"></textarea>
+    </div>
+    <div class="flex space-x-6">
+     <button class="bg-blue-600 text-white px-6 py-3 rounded-md shadow hover:bg-blue-800 hover-effect" type="submit">
+      Send Message
+     </button>
+     <button class="bg-gray-600 text-white px-6 py-3 rounded-md shadow hover:bg-gray-800 hover-effect" type="reset">
+      Clear Form
+     </button>
+    </div>
+   </form>
+   <div class="mt-6 text-sm text-green-500 hidden" id="formFeedback">
+    Thank you for your message! We will get back to you soon.
+   </div>
+  </section>
+  <!-- Google Map Integration -->
+  <section class="container mx-auto p-8 mt-8">
+   <h2 class="text-3xl font-extrabold mb-6 gradient-text">
+    Our Location
+   </h2>
+   <div class="bg-gray-200 rounded-lg shadow-lg overflow-hidden shadow-effect">
+    <iframe allowfullscreen="" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509256!2d144.95565151531972!3d-37.81627927975153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577e7c7f0b6fdb1!2sSchool%20Name!5e0!3m2!1sen!2sus!4v1624447224909!5m2!1sen!2sus" style="border: 0" width="100%">
+    </iframe>
+   </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="container mx-auto p-8 mt-8 bg-white gradient-bg shadow-lg rounded-lg">
+   <h2 class="text-3xl font-extrabold mb-6 gradient-text">
+    Frequently Asked Questions
+   </h2>
+   <div>
+    <div class="mb-6">
+     <h3 class="text-lg font-medium text-white">
+      <span class="mr-2">
+       📞
+      </span>
+      How can I contact the school?
+     </h3>
+     <p class="text-sm text-gray-200">
+      You can use the contact form above to send us a message, or call us
+            directly at (123) 456-7890.
+     </p>
+    </div>
+    <div class="mb-6">
+     <h3 class="text-lg font-medium text-white">
+      <span class="mr-2">
+       🕒
+      </span>
+      What are the school's office hours?
+     </h3>
+     <p class="text-sm text-gray-200">
+      Our office is open from 9:00 AM to 5:00 PM, Monday through Friday.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Footer Links -->
+  <footer class="gradient-bg text-white p-6 mt-8 shadow-lg">
+   <div class="container mx-auto flex justify-center space-x-6">
+    <a class="text-lg font-bold hover:underline hover-effect" href="contact_confirmation.html">
+     Send Message
+    </a>
+    <a class="text-lg font-bold hover:underline hover-effect" href="javascript:void(0)" onclick="clearForm()">
+     Clear Form
+    </a>
+    <a class="text-lg font-bold hover:underline hover-effect" href="#">
+     <img alt="Facebook icon" class="w-6 h-6 inline" height="40" src="img_9.png" width="40"/>
+    </a>
+    <a class="text-lg font-bold hover:underline hover-effect" href="#">
+     <img alt="Twitter icon" class="w-6 h-6 inline" height="40" src="img_11.png" width="40"/>
+    </a>
+    <a class="text-lg font-bold hover:underline hover-effect" href="#">
+     <img alt="Instagram icon" class="w-6 h-6 inline" height="40" src="img_10.png" width="40"/>
+    </a>
+   </div>
+  </footer>
+  <!-- JavaScript for form validation and interaction -->
+  <script>
+   document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Form validation logic here
+          document.getElementById("formFeedback").classList.remove("hidden");
+        });
+
+      function clearForm() {
+        document.getElementById("contactForm").reset();
+        document.getElementById("formFeedback").classList.add("hidden");
+      }
+  </script>
+ </body>
+</html>

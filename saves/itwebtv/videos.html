@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT WebTV - Videos
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js">
+  </script>
+  <style>
+   /* Custom animations for hero text */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-900 text-white font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-gray-800 to-gray-900 p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <div>
+     <a class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300" href="index.html">
+      IT WebTV
+     </a>
+    </div>
+    <div class="space-x-4">
+     <a class="text-white hover:text-blue-400 transition duration-300" href="index.html">
+      Home
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="about.html">
+      About Us
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="contact.html">
+      Contact
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="playlist.html">
+      My Playlist
+     </a>
+     <a class="bg-blue-500 hover:bg-blue-600 transition duration-300 px-4 py-2 rounded" href="upload.html">
+      Upload Video
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-500 to-purple-600 text-center py-20">
+   <h1 class="text-5xl font-bold fade-in">
+    Explore Our IT WebTV Videos
+   </h1>
+   <p class="mt-4 text-xl fade-in">
+    Categorized by different topics, allowing you to easily browse, filter, and watch videos based on your interests.
+   </p>
+  </section>
+  <!-- Filters Section -->
+  <section class="container mx-auto mt-8">
+   <div class="flex justify-center space-x-4">
+    <a class="bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 rounded hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 transition duration-300 flex items-center" href="featured.html">
+     <span class="material-icons">
+      star
+     </span>
+     Featured Videos
+    </a>
+    <a class="bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 rounded hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 transition duration-300 flex items-center" href="new_releases.html">
+     <span class="material-icons">
+      new_releases
+     </span>
+     New Releases
+    </a>
+    <a class="bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 rounded hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 transition duration-300 flex items-center" href="top_rated.html">
+     <span class="material-icons">
+      thumb_up
+     </span>
+     Top Rated
+    </a>
+   </div>
+  </section>
+  <!-- Videos Section -->
+  <section class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+   <!-- Example Video Card -->
+   <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+    <img alt="A colorful abstract video thumbnail" class="w-full h-48 object-cover" height="400" src="img_21.png" width="600"/>
+    <div class="p-4">
+     <h2 class="text-xl font-bold">
+      Video Title
+     </h2>
+     <p class="mt-2 text-gray-400">
+      This is a brief description of the video.
+     </p>
+     <div class="mt-4 flex items-center justify-between">
+      <button class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
+       Play
+      </button>
+      <button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition duration-300">
+       Add to Playlist
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Repeat the above block for additional videos -->
+  </section>
+  <!-- Comments Section -->
+  <section class="container mx-auto mt-8 p-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg shadow-lg">
+   <h2 class="text-2xl font-bold">
+    User Comments
+   </h2>
+   <div class="mt-4">
+    <!-- Example Comment -->
+    <div class="p-4 bg-gray-700 rounded-lg mb-4">
+     <p class="font-bold">
+      User Name
+     </p>
+     <p class="mt-2 text-gray-400">
+      This is a user comment about the video.
+     </p>
+    </div>
+    <!-- Repeat the above block for additional comments -->
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 mt-8">
+   <div class="container mx-auto text-center">
+    <div class="flex justify-center space-x-4 mb-4">
+     <a class="text-white hover:text-blue-400 transition duration-300" href="#">
+      <span class="material-icons">
+       facebook
+      </span>
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="#">
+      <span class="material-icons">
+       twitter
+      </span>
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="#">
+      <span class="material-icons">
+       instagram
+      </span>
+     </a>
+     <a class="text-white hover:text-blue-400 transition duration-300" href="#">
+      <span class="material-icons">
+       linkedin
+      </span>
+     </a>
+    </div>
+    <p>
+     © 2023 IT WebTV. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <script>
+   // JavaScript for smooth scrolling and dynamic interactions
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   About Us - IT School
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   .timeline:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: #3b82f6;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+
+      .timeline-item {
+        padding-left: 50%;
+        position: relative;
+        margin-bottom: 4rem;
+      }
+
+      .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #3b82f6;
+        border: 2px solid #d1d5db;
+      }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900 font-sans leading-normal tracking-normal">
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-16 shadow-lg relative overflow-hidden">
+   <img alt="Background Image" class="absolute inset-0 w-full h-full object-cover opacity-30" height="900" src="img_16.png" width="1600"/>
+   <div class="relative z-10">
+    <h1 class="text-5xl font-bold animate-bounce">
+     About Us
+    </h1>
+    <p class="mt-4 text-lg">
+     Learn more about our mission, values, history, and the dedicated team
+          behind our success.
+    </p>
+   </div>
+  </header>
+  <!-- Mission Section -->
+  <section class="py-16 px-4 lg:px-8 bg-gradient-to-r from-gray-100 to-gray-200">
+   <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4">
+     Our Mission
+    </h2>
+    <p class="text-xl">
+     Our mission is to provide top-notch IT education to students, helping
+          them to achieve their full potential and succeed in the tech industry.
+    </p>
+   </div>
+  </section>
+  <!-- Team Section -->
+  <section class="py-16 px-4 lg:px-8 bg-gradient-to-r from-gray-100 to-indigo-200" id="team">
+   <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-8">
+     Meet the Team
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Team Member Profile -->
+     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-indigo-100 group">
+      <img alt="Team member 1" class="w-32 h-32 mx-auto rounded-full" src="img_3.png"/>
+      <h3 class="mt-4 text-xl font-semibold">
+       Jane Doe
+      </h3>
+      <p class="text-gray-600">
+       Lead Instructor
+      </p>
+      <p class="mt-2 text-gray-700">
+       Jane brings over 10 years of experience in software development
+              and education.
+      </p>
+      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       <p class="mt-4 text-sm text-gray-600">
+        Jane is passionate about teaching and has been involved in
+                several major projects.
+       </p>
+      </div>
+     </div>
+     <!-- Additional Team Members -->
+     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-indigo-100 group">
+      <img alt="Team member 2" class="w-32 h-32 mx-auto rounded-full" height="100" src="img_12.png" width="100"/>
+      <h3 class="mt-4 text-xl font-semibold">
+       John Doe
+      </h3>
+      <p class="text-gray-600">
+       Senior Developer
+      </p>
+      <p class="mt-2 text-gray-700">
+       John specializes in backend development and has over 8 years of
+              experience.
+      </p>
+      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       <p class="mt-4 text-sm text-gray-600">
+        John has worked on numerous high-profile projects and is a
+                backend expert.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- History Section -->
+  <section class="py-16 px-4 lg:px-8 bg-gradient-to-r from-white to-gray-100" id="history">
+   <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-8">
+     Our History
+    </h2>
+    <div class="relative timeline">
+     <!-- Timeline Item -->
+     <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-lg flex items-center">
+       <i class="fas fa-school text-3xl text-indigo-600 mr-4">
+       </i>
+       <div>
+        <h3 class="text-xl font-semibold">
+         2005 - Founded
+        </h3>
+        <p class="mt-2 text-gray-700">
+         Our school was founded with the mission to provide quality IT
+                  education.
+        </p>
+       </div>
+      </div>
+     </div>
+     <!-- Additional Timeline Items -->
+     <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-lg flex items-center">
+       <i class="fas fa-graduation-cap text-3xl text-indigo-600 mr-4">
+       </i>
+       <div>
+        <h3 class="text-xl font-semibold">
+         2010 - First Graduating Class
+        </h3>
+        <p class="mt-2 text-gray-700">
+         Our first batch of students graduated, many of whom are now
+                  leaders in the tech industry.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="py-16 px-4 lg:px-8 bg-gray-100">
+   <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-8">
+     Testimonials
+    </h2>
+    <div class="relative">
+     <div class="testimonials-slider">
+      <!-- Testimonial Item -->
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-4">
+       <p class="text-gray-700">
+        "The school has provided me with the skills and knowledge I
+                needed to succeed in the tech industry."
+       </p>
+       <p class="mt-4 text-gray-600">
+        - John Smith
+       </p>
+      </div>
+      <!-- Additional Testimonials -->
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-4">
+       <p class="text-gray-700">
+        "A wonderful experience with excellent instructors and support
+                staff."
+       </p>
+       <p class="mt-4 text-gray-600">
+        - Jane Doe
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer Section -->
+  <footer class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white text-center py-8">
+   <div class="max-w-4xl mx-auto">
+    <div class="flex justify-center space-x-4 mb-4">
+     <a class="bg-white text-indigo-700 py-2 px-4 rounded-full hover:bg-gray-200 transition-colors duration-300" href="contact.html">
+      <i class="fas fa-envelope">
+      </i>
+      Contact Us
+     </a>
+     <button class="bg-white text-indigo-700 py-2 px-4 rounded-full hover:bg-gray-200 transition-colors duration-300" onclick="scrollToSection('team')">
+      <i class="fas fa-users">
+      </i>
+      Meet the Team
+     </button>
+     <button class="bg-white text-indigo-700 py-2 px-4 rounded-full hover:bg-gray-200 transition-colors duration-300" onclick="scrollToSection('history')">
+      <i class="fas fa-history">
+      </i>
+      Our History
+     </button>
+    </div>
+    <a class="text-white underline" href="index.html">
+     Back to Home
+    </a>
+   </div>
+  </footer>
+  <script>
+   function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Signup page for new members to provide their personal information, skills, and contact details. The form ensures all necessary data is collected and provides feedback for incomplete or incorrect entries." name="description"/>
+  <title>
+   Signup Page
+  </title>
+  <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; 
+            left: 50%;
+            margin-left: -80px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        input::placeholder {
+            color: #a0aec0;
+            opacity: 1;
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: #4a5568;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .progress-bar-complete {
+            background: #48bb78;
+        }
+  </style>
+  <script>
+   const imageInfo = {
+            imgsrc: "captcha.png",
+            alt: "CAPTCHA image for spam prevention",
+            width: 200,
+            height: 50,
+            title: "CAPTCHA"
+        }
+
+        function submitForm() {
+            // Form submission logic here
+            console.log('Form submitted');
+            window.location.href = 'confirmation.html';
+        }
+
+        function resetForm() {
+            // Form reset logic here
+            document.getElementById('signupForm').reset();
+            updateProgress();
+        }
+
+        function validateInput(input) {
+            // Real-time input validation logic here
+            console.log(`Validating ${input.name}`);
+            const feedback = input.nextElementSibling;
+            if (!input.value) {
+                feedback.textContent = `${input.name} is required.`;
+                feedback.classList.remove('hidden');
+            } else {
+                feedback.classList.add('hidden');
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const formElements = document.querySelectorAll('#signupForm input');
+            let filledElements = 0;
+            formElements.forEach(element => {
+                if (element.value) {
+                    filledElements++;
+                }
+            });
+            const progressPercentage = (filledElements / formElements.length) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progressPercentage + '%';
+            if (progressPercentage === 100) {
+                progressBar.classList.add('progress-bar-complete');
+            } else {
+                progressBar.classList.remove('progress-bar-complete');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const formElements = document.querySelectorAll('#signupForm input');
+            formElements.forEach(element => {
+                element.addEventListener('input', () => validateInput(element));
+            });
+        });
+  </script>
+ </head>
+ <body class="bg-gradient min-h-screen flex flex-col items-center justify-center">
+  <div class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+   <div class="progress-bar" id="progressBar">
+   </div>
+   <h1 class="text-3xl font-semibold mb-6 text-gray-800">
+    Signup
+   </h1>
+   <form id="signupForm" onsubmit="submitForm(); return false;">
+    <div class="mb-4 tooltip">
+     <label class="block text-gray-700 text-sm font-semibold mb-2" for="name">
+      Name
+     </label>
+     <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+     <span class="tooltiptext">
+      Enter your full name
+     </span>
+     <p class="text-red-500 text-xs italic hidden">
+      Name is required.
+     </p>
+    </div>
+    <div class="mb-4 tooltip">
+     <label class="block text-gray-700 text-sm font-semibold mb-2" for="email">
+      Email
+     </label>
+     <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="example@mail.com" required="" type="email"/>
+     <span class="tooltiptext">
+      Enter a valid email address
+     </span>
+     <p class="text-red-500 text-xs italic hidden">
+      Email is required.
+     </p>
+    </div>
+    <div class="mb-4 tooltip">
+     <label class="block text-gray-700 text-sm font-semibold mb-2" for="skills">
+      Skills
+     </label>
+     <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="skills" name="skills" placeholder="e.g. JavaScript, Python" required="" type="text"/>
+     <span class="tooltiptext">
+      List your skills here
+     </span>
+     <p class="text-red-500 text-xs italic hidden">
+      Skills are required.
+     </p>
+    </div>
+    <div class="mb-4 tooltip">
+     <label class="block text-gray-700 text-sm font-semibold mb-2" for="contact">
+      Contact
+     </label>
+     <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="contact" name="contact" placeholder="Your phone number" required="" type="text"/>
+     <span class="tooltiptext">
+      Enter your contact number
+     </span>
+     <p class="text-red-500 text-xs italic hidden">
+      Contact is required.
+     </p>
+    </div>
+    <div class="mb-4 tooltip">
+     <label class="block text-gray-700 text-sm font-semibold mb-2" for="captcha">
+      CAPTCHA
+     </label>
+     <div class="flex items-center">
+      <img alt="CAPTCHA image for spam prevention" class="mr-4" height="100" src="img_16.png" title="CAPTCHA" width="100"/>
+      <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="captcha" name="captcha" placeholder="Enter CAPTCHA" required="" type="text"/>
+      <span class="tooltiptext">
+       Enter the text shown in the image
+      </span>
+     </div>
+     <p class="text-red-500 text-xs italic hidden">
+      CAPTCHA is required.
+     </p>
+    </div>
+    <div class="flex items-center justify-between">
+     <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-105" type="submit">
+      Submit
+     </button>
+     <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-150 ease-in-out transform hover:scale-105" onclick="resetForm()" type="button">
+      Reset
+     </button>
+    </div>
+   </form>
+   <div class="mt-6 text-center">
+    <a class="text-indigo-500 hover:underline" href="index.html">
+     Home
+    </a>
+    |
+    <a class="text-indigo-500 hover:underline" href="login.html">
+     Login
+    </a>
+    |
+    <a class="text-indigo-500 hover:underline" href="help.html">
+     Help
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

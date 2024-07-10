@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Contact Us
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom styles */
+      .bg-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .tooltip {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        z-index: 10;
+      }
+
+      .form-field:hover .tooltip {
+        display: block;
+      }
+
+      .form-field input:hover,
+      .form-field textarea:hover {
+        border-color: #764ba2;
+      }
+
+      .header-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .button-icon {
+        margin-right: 0.5rem;
+      }
+
+      .hover-animate {
+        transition: transform 0.2s;
+      }
+
+      .hover-animate:hover {
+        transform: scale(1.05);
+      }
+  </style>
+ </head>
+ <body class="bg-gradient text-white font-sans">
+  <header class="p-6 bg-purple-700 header-shadow">
+   <nav class="flex justify-between items-center">
+    <div class="text-2xl font-bold">
+     School Contact Page
+    </div>
+    <div class="space-x-4">
+     <a class="text-white hover:text-gray-300" href="index.html">
+      Home
+     </a>
+     <a class="text-white hover:text-gray-300" href="courses.html">
+      Courses
+     </a>
+     <a class="text-white hover:text-gray-300" href="about.html">
+      About Us
+     </a>
+     <a class="text-white hover:text-gray-300" href="login.html">
+      Login
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="p-8">
+   <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 text-gray-800 hover-animate">
+    <h1 class="text-3xl font-bold mb-6">
+     Contact Us
+    </h1>
+    <form class="space-y-4" id="contactForm">
+     <div class="form-field relative">
+      <label class="block text-sm font-bold mb-2" for="name">
+       Name
+      </label>
+      <input class="w-full p-3 border border-gray-300 rounded" id="name" name="name" required="" type="text"/>
+      <div class="tooltip">
+       Please enter your full name.
+      </div>
+     </div>
+     <div class="form-field relative">
+      <label class="block text-sm font-bold mb-2" for="email">
+       Email
+      </label>
+      <input class="w-full p-3 border border-gray-300 rounded" id="email" name="email" required="" type="email"/>
+      <div class="tooltip">
+       Please enter a valid email address.
+      </div>
+     </div>
+     <div class="form-field relative">
+      <label class="block text-sm font-bold mb-2" for="subject">
+       Subject
+      </label>
+      <input class="w-full p-3 border border-gray-300 rounded" id="subject" name="subject" required="" type="text"/>
+      <div class="tooltip">
+       Please enter the subject of your message.
+      </div>
+     </div>
+     <div class="form-field relative">
+      <label class="block text-sm font-bold mb-2" for="message">
+       Message
+      </label>
+      <textarea class="w-full p-3 border border-gray-300 rounded" id="message" name="message" required="" rows="5"></textarea>
+      <div class="tooltip">
+       Please enter your message.
+      </div>
+     </div>
+     <div class="form-field relative">
+      <label class="block text-sm font-bold mb-2" for="captcha">
+       CAPTCHA
+      </label>
+      <input class="w-full p-3 border border-gray-300 rounded" id="captcha" name="captcha" required="" type="text"/>
+      <div class="tooltip">
+       Please enter the CAPTCHA code.
+      </div>
+     </div>
+     <div class="flex space-x-4">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover-animate" onclick="submitForm()" type="button">
+       Submit
+      </button>
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover-animate" onclick="resetForm()" type="button">
+       Reset
+      </button>
+     </div>
+    </form>
+   </div>
+  </main>
+  <section class="mt-8">
+   <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 text-gray-800 hover-animate">
+    <h2 class="text-2xl font-bold mb-4">
+     Our Location
+    </h2>
+    <div class="w-full h-64 border border-gray-300 rounded shadow-lg" id="map">
+    </div>
+   </div>
+  </section>
+  <section class="mt-8">
+   <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 text-gray-800 hover-animate">
+    <h2 class="text-2xl font-bold mb-4">
+     Live Chat Support
+    </h2>
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex items-center hover-animate" id="chatButton">
+     <svg class="button-icon" fill="none" height="24" stroke="currentColor" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m-6 0a9 9 0 110-12.39A9 9 0 0112 2a9 9 0 010 18h-2a2 2 0 01-2-2v-2c0-1.1-.9-2-2-2H6z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+     </svg>
+     Chat Now
+    </button>
+   </div>
+  </section>
+  <footer class="p-4 bg-purple-700 text-center text-white mt-8">
+   <div class="space-x-4">
+    <a class="hover:text-gray-300" href="privacy.html">
+     Privacy Policy
+    </a>
+    <a class="hover:text-gray-300" href="terms.html">
+     Terms of Service
+    </a>
+   </div>
+  </footer>
+  <script>
+   // JavaScript for handling form validation, Google Maps integration, and live chat support
+      function submitForm() {
+        // Custom form submission logic
+        alert("Form submitted!");
+      }
+
+      function resetForm() {
+        document.getElementById("contactForm").reset();
+      }
+
+      // Initialize Google Map
+      function initMap() {
+        var schoolLocation = { lat: -25.344, lng: 131.036 };
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: schoolLocation,
+        });
+        var marker = new google.maps.Marker({
+          position: schoolLocation,
+          map: map,
+        });
+      }
+
+      // Load Google Maps script dynamically
+      var script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      // Live chat button functionality
+      document
+        .getElementById("chatButton")
+        .addEventListener("click", function () {
+          // Custom live chat support logic
+          alert("Starting live chat...");
+        });
+  </script>
+ </body>
+</html>

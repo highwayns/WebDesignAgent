@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Courses - IT School
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .course-card:hover .course-details {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .scroll-animate {
+        animation: textScroll 30s linear infinite;
+    }
+
+    @keyframes textScroll {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(-100%); }
+    }
+
+    .hover-underline:hover {
+        text-decoration: underline;
+    }
+
+    .smooth-expand {
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    .gradient-border {
+        border-image-slice: 1;
+        border-width: 3px;
+        border-image-source: linear-gradient(to right, #4c6ef5, #b5179e);
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-8">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-4xl font-bold">
+     IT School Courses
+    </h1>
+    <nav>
+     <a class="text-white hover:text-gray-300 hover-underline" href="index.html">
+      Back to Home
+     </a>
+    </nav>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container mx-auto my-8">
+   <!-- Search and Sort Section -->
+   <div class="flex justify-between items-center mb-6">
+    <div class="relative w-1/2">
+     <input class="border border-gray-300 rounded p-2 w-full pl-10 hover:border-blue-400 transition-colors duration-300" placeholder="Search courses..." type="text"/>
+     <svg class="w-6 h-6 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M10 2a8 8 0 106.32 3.16l5.38 5.38a1 1 0 01-1.42 1.42l-5.38-5.38A8 8 0 0010 2zm0 2a6 6 0 100 12 6 6 0 000-12z">
+      </path>
+     </svg>
+    </div>
+    <div>
+     <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded hover:from-blue-700 hover:to-purple-700 mr-2 flex items-center" onclick="sortCourses('name')">
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M6 2a1 1 0 011 1v14.59l3.3-3.3a1 1 0 011.42 1.42l-5 5a1 1 0 01-1.42 0l-5-5a1 1 0 011.42-1.42L5 17.59V3a1 1 0 011-1z">
+       </path>
+      </svg>
+      Sort by Name
+     </button>
+     <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded hover:from-blue-700 hover:to-purple-700 mr-2 flex items-center" onclick="sortCourses('duration')">
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M12 2a10 10 0 00-7.75 16.56l1.42-1.42A7.93 7.93 0 014 12a8 8 0 118 8 7.93 7.93 0 01-5.14-1.67l-1.42 1.42A10 10 0 1012 2z">
+       </path>
+      </svg>
+      Sort by Duration
+     </button>
+     <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded hover:from-blue-700 hover:to-purple-700 flex items-center" onclick="sortCourses('popularity')">
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M12 15.39l-4.24 2.23a1 1 0 01-1.45-1.05l.81-4.73-3.44-3.35a1 1 0 01.55-1.7l4.76-.69 2.13-4.32a1 1 0 011.79 0l2.13 4.32 4.76.69a1 1 0 01.55 1.7l-3.44 3.35.81 4.73a1 1 0 01-1.45 1.05L12 15.39z">
+       </path>
+      </svg>
+      Sort by Popularity
+     </button>
+    </div>
+   </div>
+   <!-- Course Grid -->
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Example Course Card -->
+    <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden relative border-2 gradient-border">
+     <img alt="Course image" class="w-full h-48 object-cover" height="400" src="img_2.png" width="600"/>
+     <div class="p-4">
+      <h2 class="text-xl font-bold mb-2">
+       Course Title
+      </h2>
+      <p class="text-gray-600 mb-4">
+       Brief description of the course. Highlight key points that attract users.
+      </p>
+      <button class="bg-gradient-to-r from-green-500 to-teal-500 text-white py-2 px-4 rounded hover:from-green-700 hover:to-teal-700">
+       Apply Now
+      </button>
+      <div class="course-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out smooth-expand mt-4">
+       <p class="text-gray-800">
+        Detailed description of the course. This section expands on hover to show more information.
+       </p>
+       <p class="text-gray-600 mt-2">
+        Instructor: John Doe
+       </p>
+       <p class="text-gray-600">
+        Rating: ⭐⭐⭐⭐☆
+       </p>
+       <p class="text-gray-600">
+        Duration: 10 weeks
+       </p>
+       <p class="text-gray-600">
+        Start Date: Jan 10, 2024
+       </p>
+       <p class="text-gray-600">
+        Related Courses: Course A, Course B, Course C
+       </p>
+      </div>
+     </div>
+    </div>
+    <!-- Repeat similar card structure for other courses -->
+   </div>
+   <!-- Load More Button -->
+   <div class="text-center mt-8">
+    <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded hover:from-blue-700 hover:to-purple-700" onclick="loadMoreCourses()">
+     Load More
+    </button>
+   </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-6 mt-8">
+   <div class="container mx-auto text-center">
+    <div class="flex justify-center mb-4">
+     <a class="mx-2 hover:text-gray-300" href="#">
+      <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.42 3.58 8.06 8 8.92V15.5h-2.4v-2.6h2.4v-1.9c0-2.4 1.48-3.7 3.62-3.7 1.02 0 1.9.1 2.16.14v2.5h-1.48c-1.17 0-1.4.56-1.4 1.38v1.8H17l-.4 2.6h-2.2v5.54c4.42-.86 8-4.5 8-8.92 0-5.52-4.48-10-10-10z">
+       </path>
+      </svg>
+     </a>
+     <a class="mx-2 hover:text-gray-300" href="#">
+      <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M24 4.56a9.92 9.92 0 01-2.83.78 4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.12 1.2 4.92 4.92 0 00-8.38 4.48 13.94 13.94 0 01-10.12-5.13 4.92 4.92 0 001.52 6.56 4.91 4.91 0 01-2.23-.62v.06a4.92 4.92 0 003.95 4.83 4.9 4.9 0 01-2.22.08 4.93 4.93 0 004.6 3.42 9.87 9.87 0 01-6.1 2.1c-.4 0-.79-.02-1.18-.07a13.94 13.94 0 007.56 2.22c9.06 0 14.01-7.5 14.01-14 0-.21-.01-.42-.02-.63A10 10 0 0024 4.56z">
+       </path>
+      </svg>
+     </a>
+     <a class="mx-2 hover:text-gray-300" href="#">
+      <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+       <path d="M12 2a10 10 0 00-10 10c0 4.42 3 8.16 7.2 9.48.52.09.72-.22.72-.5v-1.72c-2.92.64-3.52-1.4-3.52-1.4-.48-1.2-1.2-1.52-1.2-1.52-.96-.64.07-.64.07-.64 1.04.07 1.6 1.04 1.6 1.04.88 1.52 2.32 1.04 2.88.8.09-.64.32-1.04.56-1.28-2.32-.24-4.8-1.2-4.8-5.36 0-1.2.48-2.24 1.2-3.04-.16-.32-.56-1.6.08-3.2 0 0 1.04-.32 3.52 1.2.96-.24 1.92-.4 2.88-.4.96 0 1.92.16 2.88.4 2.48-1.52 3.52-1.2 3.52-1.2.64 1.6.24 2.88.08 3.2.72.8 1.2 1.84 1.2 3.04 0 4.16-2.48 5.12-4.8 5.36.4.32.64.96.64 1.92v2.88c0 .32.24.56.72.48A10.05 10.05 0 0022 12a10 10 0 00-10-10z">
+       </path>
+      </svg>
+     </a>
+    </div>
+    <p>
+     © 2023 IT School. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <!-- JavaScript for interactivity -->
+  <script>
+   function sortCourses(criteria) {
+      // JavaScript function to sort courses
+      console.log("Sorting by", criteria);
+    }
+
+    function loadMoreCourses() {
+      // JavaScript function to load more courses
+      console.log("Loading more courses");
+    }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT Courses - School
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .gradient-btn {
+        background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+      }
+      .hover-gradient:hover {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .modal-fade {
+        animation: fadeIn 0.5s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .card-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+      }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 font-sans">
+  <!-- Navigation Bar -->
+  <nav class="gradient-bg text-white p-6 shadow-lg">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="flex space-x-6 items-center">
+     <img alt="School Logo" class="w-10 h-10" height="40" src="img_22.png" width="40"/>
+     <a class="hover:underline font-bold text-lg" href="index.html">
+      Home
+     </a>
+     <a class="hover:underline font-bold text-lg" href="about.html">
+      About Us
+     </a>
+     <a class="hover:underline font-bold text-lg" href="contact.html">
+      Contact
+     </a>
+     <a class="hover:underline font-bold text-lg" href="login.html">
+      Login
+     </a>
+    </div>
+    <div class="space-x-6">
+     <button class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" onclick="enrollCourse()">
+      Enroll Now
+     </button>
+     <a class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" href="cart.html">
+      View Cart
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Main Content -->
+  <div class="container mx-auto py-12">
+   <h1 class="text-5xl font-bold mb-12 text-center">
+    IT Courses Offered
+   </h1>
+   <!-- Filters and Sorting -->
+   <div class="flex justify-between mb-12">
+    <div class="flex space-x-6">
+     <button class="gradient-btn text-white py-2 px-4 rounded transition duration-300">
+      All
+     </button>
+     <button class="gradient-btn text-white py-2 px-4 rounded transition duration-300">
+      Web Development
+     </button>
+     <button class="gradient-btn text-white py-2 px-4 rounded transition duration-300">
+      Data Science
+     </button>
+     <button class="gradient-btn text-white py-2 px-4 rounded transition duration-300">
+      AI &amp; ML
+     </button>
+    </div>
+    <div>
+     <select class="bg-white border border-gray-300 py-2 px-4 rounded">
+      <option>
+       Sort by Popularity
+      </option>
+      <option>
+       Sort by Rating
+      </option>
+      <option>
+       Sort by Newest
+      </option>
+     </select>
+    </div>
+   </div>
+   <!-- Course Cards -->
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+     <img alt="Course Image - Web Development" class="w-full h-48" height="300" src="img_3.png" width="400"/>
+     <div class="p-6">
+      <h2 class="text-2xl font-bold mb-4">
+       Web Development
+      </h2>
+      <p class="text-gray-700 mb-6">
+       Learn the fundamentals of web development including HTML, CSS, and
+              JavaScript.
+      </p>
+      <div class="flex items-center mb-4">
+       <span class="text-yellow-500">
+        ⭐⭐⭐⭐⭐
+       </span>
+       <span class="ml-2 text-gray-600">
+        (120 Reviews)
+       </span>
+      </div>
+      <button class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" onclick="openCourseDetails('Web Development')">
+       View Details
+      </button>
+     </div>
+    </div>
+    <!-- Additional Course Cards (example placeholders) -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+     <img alt="Course Image - Data Science" class="w-full h-48" height="300" src="img_13.png" width="400"/>
+     <div class="p-6">
+      <h2 class="text-2xl font-bold mb-4">
+       Data Science
+      </h2>
+      <p class="text-gray-700 mb-6">
+       Dive into data analysis, machine learning, and data visualization
+              techniques.
+      </p>
+      <div class="flex items-center mb-4">
+       <span class="text-yellow-500">
+        ⭐⭐⭐⭐⭐
+       </span>
+       <span class="ml-2 text-gray-600">
+        (150 Reviews)
+       </span>
+      </div>
+      <button class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" onclick="openCourseDetails('Data Science')">
+       View Details
+      </button>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+     <img alt="Course Image - AI &amp; ML" class="w-full h-48" height="300" src="img_14.png" width="400"/>
+     <div class="p-6">
+      <h2 class="text-2xl font-bold mb-4">
+       AI &amp; ML
+      </h2>
+      <p class="text-gray-700 mb-6">
+       Explore artificial intelligence and machine learning concepts and
+              applications.
+      </p>
+      <div class="flex items-center mb-4">
+       <span class="text-yellow-500">
+        ⭐⭐⭐⭐⭐
+       </span>
+       <span class="ml-2 text-gray-600">
+        (180 Reviews)
+       </span>
+      </div>
+      <button class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" onclick="openCourseDetails('AI &amp; ML')">
+       View Details
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="gradient-bg text-white py-6">
+   <div class="container mx-auto flex justify-between">
+    <div class="space-x-4">
+     <a class="hover:underline" href="privacy.html">
+      <i class="fas fa-shield-alt">
+      </i>
+      Privacy Policy
+     </a>
+     <a class="hover:underline" href="terms.html">
+      <i class="fas fa-file-contract">
+      </i>
+      Terms of Service
+     </a>
+     <a class="hover:underline" href="faq.html">
+      <i class="fas fa-question-circle">
+      </i>
+      FAQ
+     </a>
+    </div>
+    <p>
+     © 2023 School. All rights reserved.
+    </p>
+    <div class="space-x-4">
+     <a class="hover:underline" href="#">
+      <i class="fab fa-facebook">
+      </i>
+     </a>
+     <a class="hover:underline" href="#">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a class="hover:underline" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Course Detail Modal (hidden by default) -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden modal-fade" id="courseModal">
+   <div class="bg-white rounded-lg p-8 max-w-lg w-full">
+    <h2 class="text-2xl font-bold mb-4" id="courseTitle">
+    </h2>
+    <p class="text-gray-700 mb-4" id="courseDescription">
+    </p>
+    <button class="gradient-btn hover-gradient text-white py-2 px-4 rounded transition duration-300" onclick="enrollCourse()">
+     Enroll Now
+    </button>
+    <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition duration-300" onclick="closeModal()">
+     Close
+    </button>
+   </div>
+  </div>
+  <script>
+   function enrollCourse() {
+        alert("Enroll functionality to be implemented.");
+      }
+
+      function openCourseDetails(courseName) {
+        // Fetch course details dynamically (for now, use placeholder text)
+        const courseDetails = {
+          "Web Development": "Detailed description of Web Development course...",
+          "Data Science": "Detailed description of Data Science course...",
+          "AI & ML": "Detailed description of AI & ML course...",
+        };
+        document.getElementById("courseTitle").innerText = courseName;
+        document.getElementById("courseDescription").innerText =
+          courseDetails[courseName];
+        document.getElementById("courseModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("courseModal").classList.add("hidden");
+      }
+  </script>
+ </body>
+</html>

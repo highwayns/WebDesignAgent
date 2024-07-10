@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT Summer Seminar - About
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0">
+  </script>
+  <style>
+   .testimonial-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slider button {
+            z-index: 10;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-lg">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="text-lg font-bold hover:underline">
+     IT Summer Seminar
+    </div>
+    <div class="space-x-4">
+     <a class="hover:underline" href="index.html">
+      Home
+     </a>
+     <a class="hover:underline" href="schedule.html">
+      Schedule
+     </a>
+     <a class="hover:underline" href="speakers.html">
+      Speakers
+     </a>
+     <a class="hover:underline" href="register.html">
+      Register
+     </a>
+     <a class="hover:underline" href="contact.html">
+      Contact
+     </a>
+     <a class="hover:underline" href="faq.html">
+      FAQ
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 shadow-md">
+   <div class="container mx-auto text-center animate-fade-in">
+    <h1 class="text-5xl font-bold">
+     About the IT Summer Seminar
+    </h1>
+    <p class="mt-4 text-xl">
+     Discover the mission, history, benefits, and key details for prospective attendees.
+    </p>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container mx-auto py-10">
+   <!-- Mission Section -->
+   <section class="mb-10 bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Our Mission
+    </h2>
+    <p class="text-lg">
+     The IT Summer Seminar aims to provide comprehensive insights into the latest advancements in technology, foster networking opportunities, and enhance professional growth for all attendees.
+    </p>
+   </section>
+   <!-- History Section -->
+   <section class="mb-10 bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Our History
+    </h2>
+    <p class="text-lg">
+     Since its inception in 2005, the IT Summer Seminar has grown to become one of the most anticipated events in the tech industry, attracting professionals from around the world.
+    </p>
+   </section>
+   <!-- Benefits Section -->
+   <section class="mb-10 bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Benefits of Attending
+    </h2>
+    <ul class="list-disc ml-6 text-lg">
+     <li>
+      Networking with industry experts and peers.
+     </li>
+     <li>
+      Access to cutting-edge research and technologies.
+     </li>
+     <li>
+      Professional development sessions and workshops.
+     </li>
+     <li>
+      Exclusive insights from keynote speakers.
+     </li>
+    </ul>
+   </section>
+   <!-- Video Introduction -->
+   <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">
+     Introduction Video
+    </h2>
+    <div class="relative h-64 bg-gray-300 rounded-lg shadow-lg overflow-hidden">
+     <iframe allow="autoplay; encrypted-media" allowfullscreen="" class="absolute inset-0 w-full h-full" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+     </iframe>
+    </div>
+   </section>
+   <!-- Speaker Biographies -->
+   <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">
+     Speaker Biographies
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+     <!-- Speaker 1 -->
+     <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
+      <img alt="Speaker 1 photo" class="w-24 h-24 rounded-full mx-auto" height="150" src="img_1.png" width="150"/>
+      <h3 class="text-xl font-bold mt-4">
+       John Doe
+      </h3>
+      <p class="text-gray-700">
+       John is a leading expert in cybersecurity with over 20 years of experience.
+      </p>
+     </div>
+     <!-- Speaker 2 -->
+     <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
+      <img alt="Speaker 2 photo" class="w-24 h-24 rounded-full mx-auto" height="150" src="img_9.png" width="150"/>
+      <h3 class="text-xl font-bold mt-4">
+       Jane Smith
+      </h3>
+      <p class="text-gray-700">
+       Jane is a renowned AI researcher and professor at a top university.
+      </p>
+     </div>
+     <!-- Speaker 3 -->
+     <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
+      <img alt="Speaker 3 photo" class="w-24 h-24 rounded-full mx-auto" height="150" src="img_0.png" width="150"/>
+      <h3 class="text-xl font-bold mt-4">
+       Emily Johnson
+      </h3>
+      <p class="text-gray-700">
+       Emily is an expert in blockchain technology and a published author.
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Seminar Agenda -->
+   <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">
+     Seminar Agenda
+    </h2>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <p class="text-lg">
+      Coming soon...
+     </p>
+    </div>
+   </section>
+   <!-- Testimonials Slider -->
+   <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">
+     Testimonials
+    </h2>
+    <div class="bg-white p-6 rounded-lg shadow-lg relative">
+     <div class="testimonial-slider" id="testimonial-slider">
+      <div class="testimonial-slide">
+       <p class="text-lg italic">
+        "This seminar was a game-changer for my career!"
+       </p>
+       <p class="text-right text-gray-700">
+        - Alex Brown
+       </p>
+      </div>
+      <div class="testimonial-slide">
+       <p class="text-lg italic">
+        "The insights and networking opportunities were invaluable."
+       </p>
+       <p class="text-right text-gray-700">
+        - Samantha Green
+       </p>
+      </div>
+      <div class="testimonial-slide">
+       <p class="text-lg italic">
+        "I learned so much about the latest tech trends."
+       </p>
+       <p class="text-right text-gray-700">
+        - Michael Lee
+       </p>
+      </div>
+     </div>
+     <button class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-blue-600 text-white rounded-full" onclick="prevSlide()">
+      ‹
+     </button>
+     <button class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-blue-600 text-white rounded-full" onclick="nextSlide()">
+      ›
+     </button>
+    </div>
+   </section>
+   <!-- Countdown Timer -->
+   <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">
+     Countdown to Event
+    </h2>
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+     <div class="text-2xl font-bold text-blue-600" id="countdown">
+      Loading...
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 IT Summer Seminar. All rights reserved.
+    </p>
+    <div class="flex justify-center mt-4 space-x-4">
+     <a class="hover:underline" href="#">
+      Privacy Policy
+     </a>
+     <a class="hover:underline" href="#">
+      Terms of Service
+     </a>
+     <a class="hover:underline" href="#">
+      Contact Us
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Countdown Timer Script
+    function countdownTimer() {
+        const eventDate = new Date("2023-07-01T00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("countdown").innerHTML = "Event has started!";
+        }
+    }
+
+    const timerInterval = setInterval(countdownTimer, 1000);
+
+    // Testimonial Slider Script
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll(".testimonial-slide");
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
+        });
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlide(currentSlide);
+    });
+  </script>
+ </body>
+</html>

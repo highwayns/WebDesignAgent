@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Privacy Policy - IT School
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .bg-wave {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .button-gradient {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .button-gradient:hover {
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+        }
+        .footer-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+  </style>
+ </head>
+ <body class="gradient-bg text-gray-900 font-sans">
+  <header class="bg-wave py-6">
+   <div class="container mx-auto text-center">
+    <h1 class="text-4xl font-bold text-white animate-bounce">
+     Privacy Policy
+    </h1>
+   </div>
+  </header>
+  <main class="container mx-auto py-8 px-4 smooth-scroll">
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Introduction
+    </h2>
+    <p class="mb-4">
+     Welcome to the IT School's Privacy Policy page. We are committed to protecting your personal information and respecting your privacy. This policy outlines how we collect, use, and safeguard your data.
+    </p>
+    <img alt="Privacy policy description image" class="mb-4" height="400" src="img_13.png" width="600"/>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Data Collection
+    </h2>
+    <p class="mb-4">
+     We collect various types of information in connection with the services we provide, including:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+     <li>
+      Personal identification information (Name, email address, phone number, etc.)
+     </li>
+     <li>
+      Usage data (IP addresses, browser types, etc.)
+     </li>
+     <li>
+      Cookies and tracking technologies
+     </li>
+    </ul>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Data Usage
+    </h2>
+    <p class="mb-4">
+     The data we collect is used for the following purposes:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+     <li>
+      To provide and maintain our Service
+     </li>
+     <li>
+      To notify you about changes to our Service
+     </li>
+     <li>
+      To provide customer support
+     </li>
+     <li>
+      To gather analysis or valuable information so that we can improve our Service
+     </li>
+    </ul>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Data Protection
+    </h2>
+    <p class="mb-4">
+     We adopt appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our site.
+    </p>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Consent Options
+    </h2>
+    <div class="flex space-x-4">
+     <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 button-gradient" onclick="acceptTerms()">
+      Accept Terms
+     </button>
+     <button class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700 button-gradient" onclick="declineTerms()">
+      Decline
+     </button>
+    </div>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     FAQ
+    </h2>
+    <details class="mb-4 transition-all duration-300 ease-in-out">
+     <summary class="font-semibold hover:underline">
+      What information do we collect?
+     </summary>
+     <p class="mt-2">
+      We collect information that you provide directly to us, such as when you create an account, use our interactive features, or otherwise communicate with us.
+     </p>
+    </details>
+    <details class="mb-4 transition-all duration-300 ease-in-out">
+     <summary class="font-semibold hover:underline">
+      How do we protect your data?
+     </summary>
+     <p class="mt-2">
+      Your data is stored on secure servers and protected by various security measures including encryption and access controls.
+     </p>
+    </details>
+   </section>
+   <section class="mb-8 card">
+    <h2 class="text-2xl font-semibold mb-4">
+     Navigation
+    </h2>
+    <div class="flex space-x-4">
+     <a class="text-blue-500 hover:underline" href="index.html">
+      Back to Home
+     </a>
+     <a class="text-blue-500 hover:underline" href="contact.html">
+      Contact Us
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="footer-gradient py-4">
+   <div class="container mx-auto text-center text-white">
+    <p>
+     © 2023 IT School. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <script>
+   function acceptTerms() {
+        alert('You have accepted the terms.');
+    }
+
+    function declineTerms() {
+        alert('You have declined the terms.');
+    }
+
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+  </script>
+ </body>
+</html>

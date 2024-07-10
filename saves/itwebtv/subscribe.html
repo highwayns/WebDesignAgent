@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Subscribe to IT WebTV</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(90deg, rgba(36, 36, 36, 1) 0%, rgba(72, 72, 72, 1) 100%);
+        }
+        .transition-transform {
+            transition: transform 0.2s;
+        }
+        .transition-transform:hover {
+            transform: scale(1.05);
+        }
+        .scrolling-text {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #ffffff;
+        }
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .bg-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white font-sans smooth-scroll">
+<!-- Navigation Bar -->
+<nav class="bg-gray-900 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+            <!-- Add a logo image here -->
+            <img src="https://placehold.co/40x40" alt="IT WebTV logo" class="mr-2">
+            <a class="text-2xl font-bold hover-underline-animation" href="index.html">IT WebTV</a>
+        </div>
+        <div>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="index.html">Home</a>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="about.html">About Us</a>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="videos.html">Videos</a>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- Hero Section -->
+<div class="container mx-auto px-4 py-16 bg-overlay" style="background-image: url('https://placehold.co/1600x900'); background-size: cover; background-position: center;">
+    <div class="text-center mb-10">
+        <h1 class="text-6xl font-bold mb-4">Subscribe to Our Newsletter</h1>
+        <p class="text-xl">Stay updated with the latest tech news and exclusive videos from IT WebTV.</p>
+    </div>
+</div>
+<!-- Subscription Form -->
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+        <form class="space-y-4" id="subscriptionForm">
+            <div>
+                <label class="block text-sm font-medium" for="name">Name</label>
+                <input class="w-full p-2 bg-gray-700 border-2 border-gray-600 rounded focus:outline-none focus:border-indigo-500" id="name" name="name" required="" type="text"/>
+                <p class="text-red-500 text-xs mt-1 hidden" id="nameError">Please enter your name.</p>
+            </div>
+            <div>
+                <label class="block text-sm font-medium" for="email">Email</label>
+                <input class="w-full p-2 bg-gray-700 border-2 border-gray-600 rounded focus:outline-none focus:border-indigo-500" id="email" name="email" required="" type="email"/>
+                <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Please enter a valid email address.</p>
+            </div>
+            <div class="flex justify-between">
+                <button class="transition-transform bg-gradient-to-r from-indigo-500 to-purple-500 p-2 rounded hover:from-indigo-600 hover:to-purple-600" type="submit">Submit</button>
+                <button class="transition-transform bg-gradient-to-r from-red-500 to-pink-500 p-2 rounded hover:from-red-600 hover:to-pink-600" type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Promotional Video -->
+<div class="container mx-auto px-4 py-8 my-10 bg-gray-900 p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-4">Why Subscribe?</h2>
+    <div class="flex justify-center">
+        <div class="relative w-full max-w-xl h-64">
+            <img src="https://placehold.co/600x400" alt="Promotional Video" class="absolute w-full h-full object-cover rounded-lg shadow-lg">
+            <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="w-full h-full rounded-lg shadow-lg" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+        </div>
+    </div>
+</div>
+<!-- Customer Testimonials -->
+<div class="container mx-auto px-4 py-8 my-10 bg-gray-900 p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-4">What Our Subscribers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg scrolling-text">
+            <div class="flex items-center mb-4">
+                <img src="https://placehold.co/40x40" alt="Alex Johnson" class="rounded-full mr-4">
+                <p class="font-bold">Alex Johnson</p>
+            </div>
+            <p class="mb-4">"IT WebTV provides the best tech news and videos. Subscribing to their newsletter has been a game-changer for me!"</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg scrolling-text">
+            <div class="flex items-center mb-4">
+                <img src="https://placehold.co/40x40" alt="Emily Smith" class="rounded-full mr-4">
+                <p class="font-bold">Emily Smith</p>
+            </div>
+            <p class="mb-4">"I love the exclusive content that IT WebTV offers. I always look forward to their newsletters!"</p>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 p-4">
+    <div class="container mx-auto text-center">
+        <p>© 2023 IT WebTV. All rights reserved.</p>
+        <div class="mt-4">
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="privacy.html">Privacy Policy</a>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="terms.html">Terms of Service</a>
+            <a class="mx-2 hover:text-gray-400 hover-underline-animation" href="support.html">Support</a>
+        </div>
+        <!-- Social Media Icons -->
+        <div class="mt-4">
+            <a href="#" class="mx-2">
+                <img src="https://placehold.co/24x24" alt="Facebook">
+            </a>
+            <a href="#" class="mx-2">
+                <img src="https://placehold.co/24x24" alt="Twitter">
+            </a>
+            <a href="#" class="mx-2">
+                <img src="https://placehold.co/24x24" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- JavaScript for Form Validation -->
+<script>
+    const form = document.getElementById('subscriptionForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+
+    form.addEventListener('submit', function(event) {
+        let valid = true;
+
+        // Validate Name
+        if (nameInput.value.trim() === '') {
+            nameError.classList.remove('hidden');
+            valid = false;
+        } else {
+            nameError.classList.add('hidden');
+        }
+
+        // Validate Email
+        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+            emailError.classList.remove('hidden');
+            valid = false;
+        } else {
+            emailError.classList.add('hidden');
+        }
+
+        // If not valid, prevent form submission
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>

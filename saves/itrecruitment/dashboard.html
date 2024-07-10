@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dashboard
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   /* Additional custom styles */
+        .wave {
+            background: linear-gradient(90deg, #1a202c 0%, #2d3748 100%);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hover-bg {
+            transition: background-color 0.3s;
+        }
+
+        .hover-bg:hover {
+            background-color: #4a5568;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-main-content {
+            background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900 font-sans">
+  <!-- Header -->
+  <header class="gradient-bg text-white p-4 flex justify-between items-center">
+   <div class="flex items-center space-x-4">
+    <img alt="Site Logo" class="h-12 w-12" src="img_2.png"/>
+    <nav class="space-x-4">
+     <a class="hover:text-gray-200" href="index.html">
+      Home
+     </a>
+     <a class="hover:text-gray-200" href="about.html">
+      About Us
+     </a>
+     <a class="hover:text-gray-200" href="contact.html">
+      Contact
+     </a>
+    </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <img alt="User Profile Picture" class="h-10 w-10 rounded-full" src="img_0.png"/>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <div class="flex">
+   <!-- Sidebar -->
+   <aside class="bg-gray-800 text-white w-64 p-4 space-y-4">
+    <button class="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:bg-blue-400 text-white py-2 rounded flex items-center space-x-2">
+     <span class="material-icons">
+      edit
+     </span>
+     <span>
+      Edit Profile
+     </span>
+    </button>
+    <button class="w-full bg-gradient-to-r from-red-500 to-red-700 hover:bg-red-400 text-white py-2 rounded flex items-center space-x-2">
+     <span class="material-icons">
+      logout
+     </span>
+     <span>
+      Logout
+     </span>
+    </button>
+    <button class="w-full bg-gradient-to-r from-yellow-500 to-yellow-700 hover:bg-yellow-400 text-white py-2 rounded flex items-center space-x-2">
+     <span class="material-icons">
+      notifications
+     </span>
+     <span>
+      View Notifications
+     </span>
+    </button>
+    <button class="w-full bg-gradient-to-r from-green-500 to-green-700 hover:bg-green-400 text-white py-2 rounded flex items-center space-x-2">
+     <span class="material-icons">
+      settings
+     </span>
+     <span>
+      Settings
+     </span>
+    </button>
+    <button class="w-full bg-gradient-to-r from-purple-500 to-purple-700 hover:bg-purple-400 text-white py-2 rounded flex items-center space-x-2">
+     <span class="material-icons">
+      help
+     </span>
+     <span>
+      Help
+     </span>
+    </button>
+   </aside>
+   <!-- Main Dashboard Area -->
+   <main class="flex-1 p-6 bg-main-content bg-cover">
+    <section class="mb-6">
+     <h1 class="text-4xl font-bold mb-4">
+      Welcome, User!
+     </h1>
+     <p class="text-lg">
+      Here is your personalized dashboard overview.
+     </p>
+    </section>
+    <!-- User Information and Updates -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+     <div class="bg-white p-4 rounded shadow hover-scale hover-shadow">
+      <h2 class="text-2xl font-bold mb-2">
+       Recent Activities
+      </h2>
+      <p>
+       Activity 1 details...
+      </p>
+      <p>
+       Activity 2 details...
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow hover-scale hover-shadow">
+      <h2 class="text-2xl font-bold mb-2">
+       Notifications
+      </h2>
+      <p>
+       Notification 1 details...
+      </p>
+      <p>
+       Notification 2 details...
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow hover-scale hover-shadow">
+      <h2 class="text-2xl font-bold mb-2">
+       Quick Access
+      </h2>
+      <button class="w-full bg-blue-500 hover:bg-blue-400 text-white py-2 rounded mb-2">
+       Edit Profile
+      </button>
+      <button class="w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded mb-2">
+       View Notifications
+      </button>
+     </div>
+    </section>
+    <!-- Customizable Widgets -->
+    <section class="bg-white p-4 rounded shadow mb-6 hover-scale hover-shadow">
+     <h2 class="text-2xl font-bold mb-2">
+      Customizable Widgets
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="widget-container">
+      <!-- Widgets will be dynamically added here -->
+     </div>
+    </section>
+    <!-- User Statistics -->
+    <section class="bg-white p-4 rounded shadow mb-6 hover-scale hover-shadow">
+     <h2 class="text-2xl font-bold mb-2">
+      User Statistics
+     </h2>
+     <p>
+      Stat 1 details...
+     </p>
+     <p>
+      Stat 2 details...
+     </p>
+    </section>
+    <!-- Help Section -->
+    <section class="bg-white p-4 rounded shadow hover-scale hover-shadow">
+     <h2 class="text-2xl font-bold mb-2">
+      Help Section
+     </h2>
+     <p>
+      If you need assistance, please visit the
+      <a class="text-blue-500 hover:underline" href="help.html">
+       Help
+      </a>
+      page.
+     </p>
+    </section>
+   </main>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-4 flex justify-between">
+   <div>
+    © 2023 Your Company
+   </div>
+   <div>
+    <a class="hover:text-gray-400" href="index.html">
+     Home
+    </a>
+    |
+    <a class="hover:text-gray-400" href="about.html">
+     About Us
+    </a>
+    |
+    <a class="hover:text-gray-400" href="contact.html">
+     Contact
+    </a>
+   </div>
+  </footer>
+  <!-- JavaScript for interactivity -->
+  <script>
+   document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert(button.textContent + ' button clicked');
+            });
+        });
+
+        // Dynamically add images to the customizable widgets section
+        const imageInfo = [
+            {
+                imgsrc: "https://placehold.co/200x150",
+                alt: "This is a placeholder image for widget 1",
+                title: "Widget 1 Image"
+            },
+            {
+                imgsrc: "https://placehold.co/200x150",
+                alt: "This is a placeholder image for widget 2",
+                title: "Widget 2 Image"
+            }
+        ];
+
+        const widgetContainer = document.getElementById('widget-container');
+        imageInfo.forEach(info => {
+            const widget = document.createElement('div');
+            widget.classList.add('bg-white', 'p-4', 'rounded', 'shadow', 'hover-scale', 'hover-shadow');
+            widget.innerHTML = `
+                <h3 class="text-xl font-bold mb-2">${info.title}</h3>
+                <img src="${info.imgsrc}" alt="${info.alt}" class="w-full h-auto rounded mb-2"/>
+                <p>${info.alt}</p>
+            `;
+            widgetContainer.appendChild(widget);
+        });
+  </script>
+ </body>
+</html>

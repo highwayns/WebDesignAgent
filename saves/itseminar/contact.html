@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Contact Us
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   const imageInfo = {
+            imgsrc: "search.png",
+            alt: "This is an example image",
+            width: 600,
+            height: 400,
+            title: "Example image title",
+        };
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Implement form validation and submission feedback logic here
+                alert('Form submitted successfully!');
+            });
+
+            const faqs = document.querySelectorAll('.faq-title');
+            faqs.forEach(faq => {
+                faq.addEventListener('click', () => {
+                    const answer = faq.nextElementSibling;
+                    answer.classList.toggle('hidden');
+                });
+            });
+        });
+
+        function submitContactForm() {
+            document.getElementById('contactForm').submit();
+        }
+  </script>
+ </head>
+ <body class="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 text-gray-900 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-blue-500 to-blue-700 shadow-md p-4">
+   <div class="container mx-auto flex justify-between">
+    <div class="text-xl font-bold text-white">
+     Seminar
+    </div>
+    <div class="flex space-x-4">
+     <a class="text-white hover:text-blue-200" href="index.html">
+      Home
+     </a>
+     <a class="text-white hover:text-blue-200" href="about.html">
+      About
+     </a>
+     <a class="text-white hover:text-blue-200" href="schedule.html">
+      Schedule
+     </a>
+     <a class="text-white hover:text-blue-200" href="speakers.html">
+      Speakers
+     </a>
+     <a class="text-white hover:text-blue-200" href="register.html">
+      Register
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Main Content -->
+  <main class="container mx-auto py-10 bg-gradient-to-r from-white to-blue-100 rounded-lg shadow-xl p-6">
+   <h1 class="text-4xl font-bold mb-6 text-center text-blue-700">
+    Contact Us
+   </h1>
+   <!-- Contact Form -->
+   <div class="bg-white p-6 rounded-lg shadow-lg mb-10">
+    <h2 class="text-2xl font-bold mb-4 text-blue-600">
+     Get in Touch
+    </h2>
+    <form class="space-y-4" id="contactForm">
+     <div>
+      <label class="block mb-2 font-semibold text-gray-700" for="name">
+       Name
+      </label>
+      <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" name="name" required="" type="text"/>
+      <p class="text-red-500 text-xs mt-1">
+       Name is required.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold text-gray-700" for="email">
+       Email
+      </label>
+      <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" name="email" required="" type="email"/>
+      <p class="text-red-500 text-xs mt-1">
+       Valid email is required.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold text-gray-700" for="phone">
+       Phone Number
+      </label>
+      <input class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="phone" name="phone" required="" type="tel"/>
+      <p class="text-red-500 text-xs mt-1">
+       Phone number is required.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold text-gray-700" for="message">
+       Message
+      </label>
+      <textarea class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" name="message" required="" rows="4"></textarea>
+      <p class="text-red-500 text-xs mt-1">
+       Message is required.
+      </p>
+     </div>
+     <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300" type="submit">
+      Submit
+     </button>
+    </form>
+   </div>
+   <!-- Map Section -->
+   <div class="bg-white p-6 rounded-lg shadow-lg mb-10">
+    <h2 class="text-2xl font-bold mb-4 text-blue-600">
+     Our Location
+    </h2>
+    <div class="w-full h-64 bg-gray-200 rounded-lg border-4 border-blue-500 shadow-md">
+     <img alt="Map showing the seminar location" class="w-full h-full object-cover rounded-lg" height="400" src="img_5.png" width="600"/>
+    </div>
+   </div>
+   <!-- Contact Details -->
+   <div class="bg-white p-6 rounded-lg shadow-lg mb-10">
+    <h2 class="text-2xl font-bold mb-4 text-blue-600">
+     Contact Details
+    </h2>
+    <div class="space-y-4">
+     <div class="flex items-center">
+      <img alt="Email icon" class="mr-2" height="20" src="img_14.png" width="20"/>
+      <div>
+       <h3 class="text-xl font-bold">
+        Email
+       </h3>
+       <p>
+        info@seminar.com
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center">
+      <img alt="Phone icon" class="mr-2" height="20" src="img_11.png" width="20"/>
+      <div>
+       <h3 class="text-xl font-bold">
+        Phone
+       </h3>
+       <p>
+        (123) 456-7890
+       </p>
+      </div>
+     </div>
+     <div class="flex space-x-4">
+      <a class="text-blue-500 hover:text-blue-600" href="#">
+       <img alt="Facebook" class="w-6 h-6 inline" height="100" src="img_16.png" width="100"/>
+       Facebook
+      </a>
+      <a class="text-blue-400 hover:text-blue-500" href="#">
+       <img alt="Twitter" class="w-6 h-6 inline" height="100" src="img_17.png" width="100"/>
+       Twitter
+      </a>
+      <a class="text-pink-500 hover:text-pink-600" href="#">
+       <img alt="Instagram" class="w-6 h-6 inline" height="100" src="img_18.png" width="100"/>
+       Instagram
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- FAQ Section -->
+   <div class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-blue-600">
+     Frequently Asked Questions
+    </h2>
+    <div class="space-y-4">
+     <div>
+      <h3 class="text-lg font-bold cursor-pointer faq-title">
+       Question 1
+      </h3>
+      <p class="hidden">
+       Answer to question 1...
+      </p>
+     </div>
+     <div>
+      <h3 class="text-lg font-bold cursor-pointer faq-title">
+       Question 2
+      </h3>
+      <p class="hidden">
+       Answer to question 2...
+      </p>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-500 to-blue-700 shadow-md p-4 mt-10 text-white">
+   <div class="container mx-auto text-center">
+    <p>
+     © Seminar 2023. All rights reserved.
+    </p>
+   </div>
+  </footer>
+ </body>
+</html>

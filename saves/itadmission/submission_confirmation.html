@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Submission Confirmation
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .wave-effect {
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+      animation: wave 5s infinite linear;
+    }
+    @keyframes wave {
+      from { background-position: 0; }
+      to { background-position: 100%; }
+    }
+    .hover-effect:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s;
+    }
+    .content-appear {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .scroll-effect {
+      animation: scroll 10s infinite linear;
+    }
+    @keyframes scroll {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-blue-200 to-blue-500 text-gray-800 font-sans">
+  <div class="container mx-auto p-8">
+   <div class="bg-white shadow-lg rounded-lg p-10 text-center content-appear">
+    <img alt="Celebratory Icon" class="mx-auto mb-6" height="100" src="img_7.png" width="100"/>
+    <h1 class="text-5xl font-bold text-blue-700 mb-6">
+     Application Submitted!
+    </h1>
+    <p class="text-lg mb-6">
+     Thank you for your submission. We have received your application.
+    </p>
+    <div class="bg-green-100 p-6 rounded-lg mb-6">
+     <p class="text-green-800 font-semibold">
+      Submission Details:
+     </p>
+     <ul class="list-disc list-inside text-left">
+      <li>
+       Submission Date:
+       <span class="font-bold">
+        2023-10-05
+       </span>
+      </li>
+      <li>
+       Submission Time:
+       <span class="font-bold">
+        14:30
+       </span>
+      </li>
+      <li>
+       Application ID:
+       <span class="font-bold">
+        AP123456789
+       </span>
+      </li>
+     </ul>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-center gap-6 mb-8">
+     <button class="wave-effect text-white font-bold py-3 px-5 rounded-full hover-effect flex items-center" onclick="location.href='index.html'">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Back to Home
+     </button>
+     <button class="wave-effect text-white font-bold py-3 px-5 rounded-full hover-effect flex items-center" onclick="location.href='application_form.html'">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Submit Another Application
+     </button>
+     <button class="wave-effect text-white font-bold py-3 px-5 rounded-full hover-effect flex items-center" onclick="location.href='submitted_applications.html'">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      View Submitted Applications
+     </button>
+    </div>
+    <p class="text-lg mb-4">
+     Next Steps:
+    </p>
+    <ul class="list-disc list-inside text-left mb-8">
+     <li>
+      Check your email for confirmation.
+     </li>
+     <li>
+      Prepare the necessary documents for the next phase.
+     </li>
+     <li>
+      Contact us if you have any questions.
+     </li>
+    </ul>
+    <p class="text-lg mb-6">
+     Download a copy of your submission receipt:
+    </p>
+    <button class="bg-blue-700 text-white font-bold py-3 px-5 rounded-full hover-effect flex items-center" onclick="showConfirmation()">
+     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+     </svg>
+     Download Receipt
+    </button>
+   </div>
+   <div class="mt-8 text-center">
+    <a class="text-blue-700 hover:underline" href="index.html">
+     Main Page
+    </a>
+    |
+    <a class="text-blue-700 hover:underline" href="contact.html">
+     Contact Us
+    </a>
+   </div>
+   <footer class="mt-10 text-center text-gray-700">
+    <p class="mb-4">
+     © 2023 Your Company. All rights reserved.
+    </p>
+    <div class="flex justify-center gap-6">
+     <a class="text-blue-700 hover:text-blue-900" href="#">
+      <i class="fab fa-facebook">
+      </i>
+      Facebook
+     </a>
+     <a class="text-blue-700 hover:text-blue-900" href="#">
+      <i class="fab fa-twitter">
+      </i>
+      Twitter
+     </a>
+     <a class="text-blue-700 hover:text-blue-900" href="#">
+      <i class="fab fa-linkedin">
+      </i>
+      LinkedIn
+     </a>
+    </div>
+   </footer>
+  </div>
+  <script>
+   function showConfirmation() {
+      alert('Your receipt is being downloaded!');
+    }
+  </script>
+ </body>
+</html>

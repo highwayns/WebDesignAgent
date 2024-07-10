@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Login
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2">
+  </script>
+  <style>
+   .floating-label {
+      position: absolute;
+      pointer-events: none;
+      left: 15px;
+      top: 10px;
+      transition: 0.2s ease all;
+    }
+    .input:focus ~ .floating-label,
+    .input:not(:placeholder-shown) ~ .floating-label {
+      top: -18px;
+      left: 10px;
+      font-size: 12px;
+      color: #4f46e5;
+    }
+    .form-container {
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 h-screen flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full transform transition-all duration-500 hover:scale-105 form-container">
+   <div class="text-center mb-8">
+    <img alt="Company Logo" class="mx-auto" height="100" src="img_23.png" width="100"/>
+   </div>
+   <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-8">
+    Login
+   </h2>
+   <form @submit.prevent="validateForm" class="space-y-8" x-data="{ email: '', password: '', rememberMe: false, errors: {} }">
+    <div class="relative">
+     <input autocomplete="email" class="input block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-lg" id="email" name="email" placeholder=" " required="" type="email" x-model="email"/>
+     <label class="floating-label text-gray-600" for="email">
+      Email address
+     </label>
+     <p class="text-red-500 text-xs mt-1" x-text="errors.email">
+     </p>
+    </div>
+    <div class="relative">
+     <input autocomplete="current-password" class="input block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-lg" id="password" name="password" placeholder=" " required="" type="password" x-model="password"/>
+     <label class="floating-label text-gray-600" for="password">
+      Password
+     </label>
+     <p class="text-red-500 text-xs mt-1" x-text="errors.password">
+     </p>
+    </div>
+    <div class="flex items-center justify-between">
+     <div class="flex items-center relative">
+      <input class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" id="remember_me" name="remember_me" type="checkbox" x-model="rememberMe"/>
+      <label class="ml-2 block text-lg text-gray-900" for="remember_me">
+       Remember me
+      </label>
+      <span class="absolute top-0 right-0 -mt-1 -mr-1 text-xs bg-gray-200 rounded-full px-2 py-1">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 16h-1v-4h-1m0-2h.01M12 17h.01M12 17h-1v-4h-1m0-2h.01M12 17h.01M12 17h-1v-4h-1m0-2h.01M12 17h.01M12 17h-1v-4h-1m0-2h.01M12 17h.01M12 17h-1v-4h-1m0-2h.01M12 17h.01M12 17h-1v-4h-1m0-2h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+      </span>
+     </div>
+     <div class="text-lg">
+      <a class="font-medium text-indigo-600 hover:text-indigo-500" href="password_recovery.html">
+       Forgot your password?
+      </a>
+     </div>
+    </div>
+    <div>
+     <button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300" type="submit">
+      Sign in
+     </button>
+    </div>
+    <div class="text-center text-lg mt-4">
+     <p>
+      or sign in with
+     </p>
+     <div class="flex justify-center space-x-4 mt-2">
+      <button class="bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-md flex items-center">
+       <img alt="Google logo" class="mr-2" height="24" src="img_12.png" width="24"/>
+       Google
+      </button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md flex items-center">
+       <img alt="Facebook logo" class="mr-2" height="24" src="img_11.png" width="24"/>
+       Facebook
+      </button>
+     </div>
+    </div>
+    <div class="text-center text-lg mt-4">
+     <p>
+      Don't have an account?
+      <a class="font-medium text-indigo-600 hover:text-indigo-500" href="signup.html">
+       Sign Up
+      </a>
+     </p>
+    </div>
+    <div class="mt-6">
+     <img alt="CAPTCHA placeholder" class="mx-auto" height="80" src="img_21.png" width="300"/>
+    </div>
+   </form>
+  </div>
+  <footer class="absolute bottom-0 w-full text-center py-4 bg-gray-800 text-white text-lg">
+   <nav>
+    <a class="mx-2 hover:underline" href="privacy.html">
+     Privacy Policy
+    </a>
+    |
+    <a class="mx-2 hover:underline" href="terms.html">
+     Terms of Service
+    </a>
+   </nav>
+  </footer>
+  <script>
+   function validateForm() {
+      this.errors = {};
+
+      if (!this.email) {
+        this.errors.email = 'Email is required';
+      }
+
+      if (!this.password) {
+        this.errors.password = 'Password is required';
+      }
+
+      if (Object.keys(this.errors).length === 0) {
+        // Form is valid
+        this.$el.submit();
+      }
+    }
+  </script>
+ </body>
+</html>

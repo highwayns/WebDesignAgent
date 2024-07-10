@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Login - IT Members
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom styles for animations and transitions */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-2xl rounded-lg p-8 max-w-md w-full fade-in">
+   <img alt="Site Logo" class="mx-auto mb-5" height="100" src="img_5.png" width="100"/>
+   <h2 class="text-3xl font-bold text-center mb-5 font-sans text-gray-800">
+    Login
+   </h2>
+   <form class="space-y-6" id="loginForm">
+    <div>
+     <label class="block text-sm font-medium text-gray-700" for="username">
+      Username
+     </label>
+     <input class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform hover:scale-105" id="username" name="username" required="" type="text"/>
+     <span class="text-red-500 text-sm hidden" id="usernameError">
+      Invalid username
+     </span>
+    </div>
+    <div>
+     <label class="block text-sm font-medium text-gray-700" for="password">
+      Password
+     </label>
+     <input class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform hover:scale-105" id="password" name="password" required="" type="password"/>
+     <span class="text-red-500 text-sm hidden" id="passwordError">
+      Invalid password
+     </span>
+    </div>
+    <div class="flex items-center justify-between">
+     <label class="flex items-center">
+      <input class="form-checkbox" id="rememberMe" type="checkbox"/>
+      <span class="ml-2 text-sm text-gray-600">
+       Remember Me
+      </span>
+     </label>
+     <a class="text-sm text-indigo-500 hover:underline" href="forgot_password.html">
+      Forgot Password?
+     </a>
+    </div>
+    <button class="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300 flex justify-center items-center" type="submit">
+     <span>
+      Login
+     </span>
+     <div class="loading-spinner ml-3 hidden" id="spinner">
+     </div>
+    </button>
+   </form>
+   <div class="mt-6 text-center">
+    <a class="text-sm text-indigo-500 hover:underline" href="index.html">
+     Home
+    </a>
+    <span class="mx-2 text-gray-400">
+     |
+    </span>
+    <a class="text-sm text-indigo-500 hover:underline" href="signup.html">
+     Sign Up
+    </a>
+   </div>
+  </div>
+  <!-- Importing Tailwind via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js">
+  </script>
+  <script>
+   // JavaScript for form validation and submission handling
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const usernameError = document.getElementById('usernameError');
+      const passwordError = document.getElementById('passwordError');
+
+      let isValid = true;
+
+      // Reset error messages
+      usernameError.classList.add('hidden');
+      passwordError.classList.add('hidden');
+
+      // Basic validation (you can add more advanced validation here)
+      if (username === '') {
+        isValid = false;
+        usernameError.classList.remove('hidden');
+      }
+      if (password === '') {
+        isValid = false;
+        passwordError.classList.remove('hidden');
+      }
+
+      if (isValid) {
+        // Simulate a loading animation on form submission
+        const loginButton = event.target.querySelector('button[type="submit"]');
+        const spinner = document.getElementById('spinner');
+        loginButton.disabled = true;
+        loginButton.querySelector('span').innerHTML = 'Loading...';
+        spinner.classList.remove('hidden');
+
+        setTimeout(() => {
+          loginButton.disabled = false;
+          loginButton.querySelector('span').innerHTML = 'Login';
+          spinner.classList.add('hidden');
+          window.location.href = 'dashboard.html';
+        }, 2000);
+      }
+    });
+  </script>
+ </body>
+</html>

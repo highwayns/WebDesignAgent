@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT WebTV - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">IT WebTV</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-gray-400">About Us</a></li>
+          <li><a href="videos.html" class="hover:text-gray-400">Videos</a></li>
+          <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+          <li><a href="news.html" class="hover:text-gray-400">Latest News</a></li>
+          <li><a href="live.html" class="hover:text-gray-400">Live Stream</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8">
+    <!-- Featured Videos Carousel -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Featured Videos</h2>
+      <div class="relative">
+        <div class="carousel flex space-x-4 overflow-x-auto">
+          <div class="carousel-item shrink-0">
+            <img src="https://placehold.co/600x400" alt="Featured video 1" class="rounded-lg">
+          </div>
+          <div class="carousel-item shrink-0">
+            <img src="https://placehold.co/600x400" alt="Featured video 2" class="rounded-lg">
+          </div>
+          <div class="carousel-item shrink-0">
+            <img src="https://placehold.co/600x400" alt="Featured video 3" class="rounded-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest IT News -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Latest IT News</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="bg-gray-800 p-4 rounded-lg shadow-md">
+          <img src="https://placehold.co/300x200" alt="News image 1" class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2">News Title 1</h3>
+          <p class="text-gray-400">Brief description of the news content. Keep it concise and engaging.</p>
+        </article>
+        <article class="bg-gray-800 p-4 rounded-lg shadow-md">
+          <img src="https://placehold.co/300x200" alt="News image 2" class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2">News Title 2</h3>
+          <p class="text-gray-400">Brief description of the news content. Keep it concise and engaging.</p>
+        </article>
+        <article class="bg-gray-800 p-4 rounded-lg shadow-md">
+          <img src="https://placehold.co/300x200" alt="News image 3" class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2">News Title 3</h3>
+          <p class="text-gray-400">Brief description of the news content. Keep it concise and engaging.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Additional Features -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Stay Updated</h2>
+      <div class="flex flex-col md:flex-row md:space-x-4">
+        <div class="bg-gray-800 p-4 rounded-lg shadow-md flex-1 mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">Subscribe to Our Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Enter your email" class="w-full p-2 rounded-lg mb-2">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Subscribe</button>
+          </form>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-md flex-1">
+          <h3 class="text-xl font-bold mb-2">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-400">Facebook</a>
+            <a href="#" class="hover:text-gray-400">Twitter</a>
+            <a href="#" class="hover:text-gray-400">Instagram</a>
+            <a href="#" class="hover:text-gray-400">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-4 mt-8 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <p>&copy; 2023 IT WebTV. All rights reserved.</p>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="subscribe.html" class="hover:text-gray-400">Subscribe</a></li>
+          <li><a href="privacy.html" class="hover:text-gray-400">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-gray-400">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript for carousel and other interactions
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('.carousel');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('active');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+      });
+
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+      });
+
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   About Us
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .accordion-content { display: none; }
+    .accordion-content.active { display: block; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4 text-white">
+   <div class="container mx-auto flex justify-between items-center">
+    <a class="text-lg font-bold flex items-center" href="index.html">
+     <img alt="Company Logo" class="h-8 mr-2" height="100" src="img_20.png" width="100"/>
+     Home
+    </a>
+    <div class="space-x-4">
+     <a class="hover:text-gray-200" href="careers.html">
+      Careers
+     </a>
+     <a class="hover:text-gray-200" href="contact.html">
+      Contact Us
+     </a>
+    </div>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="bg-cover bg-center h-screen text-white relative" style="background-image: url('local-hero-image.jpg');">
+   <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70">
+   </div>
+   <div class="relative h-full flex items-center justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold">
+     About Our IT Team
+    </h1>
+   </div>
+  </header>
+  <!-- Content Sections -->
+  <main class="container mx-auto p-6 space-y-12">
+   <!-- Recruitment Process -->
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Recruitment Process
+    </h2>
+    <p class="mb-4">
+     Learn about our application steps, team goals, and what makes our IT team unique.
+    </p>
+    <ul class="space-y-2">
+     <li class="flex items-center">
+      <i class="fas fa-file-alt mr-2">
+      </i>
+      Step 1: Submit your application online.
+     </li>
+     <li class="flex items-center">
+      <i class="fas fa-desktop mr-2">
+      </i>
+      Step 2: Initial screening and interview.
+     </li>
+     <li class="flex items-center">
+      <i class="fas fa-code mr-2">
+      </i>
+      Step 3: Technical assessment.
+     </li>
+     <li class="flex items-center">
+      <i class="fas fa-check-double mr-2">
+      </i>
+      Step 4: Final interview and offer.
+     </li>
+    </ul>
+   </section>
+   <!-- Team Structure and Goals -->
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Team Structure &amp; Goals
+    </h2>
+    <p>
+     Our team is structured to foster collaboration and innovation, with dedicated roles for development, design, and project management.
+    </p>
+    <img alt="Team Collaboration" class="w-full mt-4 rounded-lg shadow-lg" height="100" src="img_21.png" width="100"/>
+   </section>
+   <!-- Member Testimonials -->
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Member Testimonials
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+     <!-- Testimonial 1 -->
+     <div class="bg-gray-100 p-6 rounded-lg shadow">
+      <img alt="John Doe" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_18.png" width="100"/>
+      <p>
+       “Working here has been an amazing experience. The team is supportive and the projects are challenging yet rewarding.”
+      </p>
+      <p class="font-bold mt-2 text-center">
+       - John Doe
+      </p>
+     </div>
+     <!-- Testimonial 2 -->
+     <div class="bg-gray-100 p-6 rounded-lg shadow">
+      <img alt="Jane Smith" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_19.png" width="100"/>
+      <p>
+       “The culture here is fantastic. We are encouraged to innovate and grow professionally.”
+      </p>
+      <p class="font-bold mt-2 text-center">
+       - Jane Smith
+      </p>
+     </div>
+     <!-- Testimonial 3 -->
+     <div class="bg-gray-100 p-6 rounded-lg shadow">
+      <img alt="Sam Wilson" class="w-16 h-16 rounded-full mx-auto mb-4" height="100" src="img_22.png" width="100"/>
+      <p>
+       “I've learned so much and the opportunities for advancement are excellent.”
+      </p>
+      <p class="font-bold mt-2 text-center">
+       - Sam Wilson
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- FAQs -->
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     FAQs
+    </h2>
+    <div class="space-y-4" id="accordion">
+     <div class="border rounded-lg">
+      <button class="accordion-button p-4 w-full text-left font-semibold focus:outline-none">
+       What is the recruitment process?
+      </button>
+      <div class="accordion-content p-4">
+       Our recruitment process includes an online application, initial screening, technical assessment, and final interview.
+      </div>
+     </div>
+     <div class="border rounded-lg">
+      <button class="accordion-button p-4 w-full text-left font-semibold focus:outline-none">
+       What benefits do you offer?
+      </button>
+      <div class="accordion-content p-4">
+       We offer competitive salaries, health benefits, professional development opportunities, and more.
+      </div>
+     </div>
+     <div class="border rounded-lg">
+      <button class="accordion-button p-4 w-full text-left font-semibold focus:outline-none">
+       How can I apply?
+      </button>
+      <div class="accordion-content p-4">
+       You can apply through our careers page where current openings are listed.
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Tabs for Detailed Sections -->
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4">
+     Detailed Information
+    </h2>
+    <div class="tabs">
+     <button class="tab-button p-4 bg-blue-600 text-white rounded-t-lg">
+      Team Structure
+     </button>
+     <button class="tab-button p-4 bg-gray-200 text-black rounded-t-lg">
+      Recruitment Benefits
+     </button>
+     <button class="tab-button p-4 bg-gray-200 text-black rounded-t-lg">
+      Company Culture
+     </button>
+    </div>
+    <div class="tab-content p-6 bg-white border rounded-b-lg">
+     <div class="tab-pane active">
+      Details about our team structure...
+     </div>
+     <div class="tab-pane">
+      Details about our recruitment benefits...
+     </div>
+     <div class="tab-pane">
+      Details about our company culture...
+     </div>
+    </div>
+   </section>
+   <!-- Interactive Buttons -->
+   <div class="flex space-x-4">
+    <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300" href="signup.html">
+     Join Us
+    </a>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300" href="team.html">
+     Meet the Team
+    </a>
+    <a class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-300" href="projects.html">
+     Our Projects
+    </a>
+   </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-blue-600 p-4 text-white text-center">
+   <div class="mb-4">
+    <a class="hover:text-gray-300 mx-2" href="https://facebook.com">
+     <i class="fab fa-facebook">
+     </i>
+     Facebook
+    </a>
+    <a class="hover:text-gray-300 mx-2" href="https://twitter.com">
+     <i class="fab fa-twitter">
+     </i>
+     Twitter
+    </a>
+    <a class="hover:text-gray-300 mx-2" href="https://linkedin.com">
+     <i class="fab fa-linkedin">
+     </i>
+     LinkedIn
+    </a>
+   </div>
+   <div>
+    © 2023 Our Company. All rights reserved.
+   </div>
+  </footer>
+  <button class="fixed bottom-4 right-4 bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300" onclick="scrollToTop()">
+   ↑ Back to Top
+  </button>
+  <script>
+   // Accordion functionality
+    document.querySelectorAll('.accordion-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('active');
+        button.classList.toggle('active');
+      });
+    });
+
+    // Tabs functionality
+    document.querySelectorAll('.tab-button').forEach((button, index) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach((btn, idx) => {
+          btn.classList.toggle('bg-blue-600', index === idx);
+          btn.classList.toggle('bg-gray-200', index !== idx);
+          btn.classList.toggle('text-white', index === idx);
+          btn.classList.toggle('text-black', index !== idx);
+        });
+
+        document.querySelectorAll('.tab-pane').forEach((pane, idx) => {
+          pane.classList.toggle('active', index === idx);
+        });
+      });
+    });
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+ </body>
+</html>

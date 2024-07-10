@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IT School Admission - Home
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .gradient-bg {
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 113, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    }
+    .wave-effect::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('wave.png') repeat-x;
+      transform: translateY(0);
+      animation: wave 10s linear infinite;
+    }
+    @keyframes wave {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+    .hover-bg-blue-700:hover {
+      background-color: #007acc;
+    }
+    .hover-zoom:hover {
+      transform: scale(1.05);
+    }
+    .shadow-lg {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+ </head>
+ <body class="text-gray-800 bg-white">
+  <!-- Header -->
+  <header class="gradient-bg text-white py-6 shadow-lg">
+   <div class="container mx-auto flex justify-between items-center px-6">
+    <h1 class="text-4xl font-bold">
+     IT School
+    </h1>
+    <nav>
+     <ul class="flex space-x-6 text-xl">
+      <li>
+       <a class="hover-underline" href="application_form.html">
+        Apply Now
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="courses.html">
+        Courses
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="about_us.html">
+        About Us
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="contact.html">
+        Contact
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="student_portal.html">
+        Student Portal
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <main>
+   <!-- Hero Section -->
+   <section class="relative wave-effect py-20 text-center bg-cover bg-center" style="background-image: url('hero_background.jpg');">
+    <div class="container mx-auto px-6">
+     <h2 class="text-5xl font-bold mb-4 text-white">
+      Welcome to IT School
+     </h2>
+     <p class="text-2xl mb-8 text-gray-200">
+      Your journey to a successful IT career starts here.
+     </p>
+     <button class="bg-gradient-to-r from-blue-500 to-teal-500 hover-bg-blue-700 text-white font-bold py-3 px-6 rounded shadow-lg transform hover-zoom transition" onclick="smoothScroll()">
+      Get Started
+     </button>
+    </div>
+   </section>
+   <!-- Search Bar -->
+   <section class="bg-gray-100 py-10">
+    <div class="container mx-auto px-6">
+     <input class="w-full p-4 border rounded-lg shadow-lg text-lg" placeholder="Search..." type="text"/>
+    </div>
+   </section>
+   <!-- Featured Courses Carousel -->
+   <section class="py-20 bg-gradient-to-r from-blue-100 to-teal-100">
+    <div class="container mx-auto px-6">
+     <h3 class="text-4xl font-bold mb-8 text-gray-800">
+      Featured Courses
+     </h3>
+     <div class="flex overflow-x-scroll space-x-4">
+      <div class="flex-none w-80 h-64 bg-gray-300 rounded-lg flex items-center justify-center shadow-lg hover-zoom transition">
+       <img alt="Course 1" class="w-60 h-40" height="100" src="img_0.png" width="100"/>
+      </div>
+      <div class="flex-none w-80 h-64 bg-gray-300 rounded-lg flex items-center justify-center shadow-lg hover-zoom transition">
+       <img alt="Course 2" class="w-60 h-40" height="100" src="img_1.png" width="100"/>
+      </div>
+      <div class="flex-none w-80 h-64 bg-gray-300 rounded-lg flex items-center justify-center shadow-lg hover-zoom transition">
+       <img alt="Course 3" class="w-60 h-40" height="100" src="img_14.png" width="100"/>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Interactive Map -->
+   <section class="bg-gray-100 py-20">
+    <div class="container mx-auto px-6">
+     <h3 class="text-4xl font-bold mb-8 text-gray-800">
+      Campus Locations
+     </h3>
+     <div class="relative">
+      <img alt="Interactive campus map" class="w-full h-96 object-cover rounded-lg shadow-lg hover-zoom transition" height="100" src="img_4.png" width="100"/>
+     </div>
+    </div>
+   </section>
+   <!-- Testimonials -->
+   <section class="py-20 bg-cover bg-center" style="background-image: url('testimonials_background.jpg');">
+    <div class="container mx-auto px-6">
+     <h3 class="text-4xl font-bold mb-8 text-white">
+      What Our Students Say
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+       <p class="mb-4">
+        "The best school for IT courses. Highly recommend!"
+       </p>
+       <p class="font-bold">
+        - John Doe
+       </p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+       <p class="mb-4">
+        "Great teachers and excellent curriculum."
+       </p>
+       <p class="font-bold">
+        - Jane Smith
+       </p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+       <p class="mb-4">
+        "I got a job in IT right after graduation. Thank you!"
+       </p>
+       <p class="font-bold">
+        - Sarah Lee
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Newsletter Subscription -->
+   <section class="bg-gradient-to-r from-blue-500 to-teal-500 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+     <h3 class="text-4xl font-bold mb-8">
+      Subscribe to Our Newsletter
+     </h3>
+     <form class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+      <input class="p-4 rounded-lg w-full md:w-auto text-lg" placeholder="Enter your email" type="email"/>
+      <button class="bg-white text-blue-500 font-bold py-2 px-4 rounded shadow-lg transform hover-zoom transition" type="submit">
+       Subscribe
+      </button>
+     </form>
+    </div>
+   </section>
+   <!-- Video Introduction -->
+   <section class="py-20 bg-gradient-to-r from-blue-100 to-teal-100">
+    <div class="container mx-auto px-6">
+     <h3 class="text-4xl font-bold mb-8 text-gray-800">
+      Introduction to Our School
+     </h3>
+     <div class="relative">
+      <video class="w-full h-96 object-cover rounded-lg shadow-lg" controls="">
+       <source src="intro_video.mp4" type="video/mp4"/>
+       Your browser does not support the video tag.
+      </video>
+     </div>
+    </div>
+   </section>
+   <!-- Social Media Integration -->
+   <section class="bg-gray-100 py-20">
+    <div class="container mx-auto px-6 text-center">
+     <h3 class="text-4xl font-bold mb-8 text-gray-800">
+      Follow Us on Social Media
+     </h3>
+     <div class="flex justify-center space-x-6">
+      <a class="text-blue-500 hover:text-blue-700 transform hover-zoom transition" href="#">
+       <i class="fab fa-facebook fa-2x">
+       </i>
+      </a>
+      <a class="text-blue-400 hover:text-blue-600 transform hover-zoom transition" href="#">
+       <i class="fab fa-twitter fa-2x">
+       </i>
+      </a>
+      <a class="text-blue-700 hover:text-blue-900 transform hover-zoom transition" href="#">
+       <i class="fab fa-linkedin fa-2x">
+       </i>
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6">
+   <div class="container mx-auto px-6 flex justify-between items-center">
+    <p>
+     © 2023 IT School. All rights reserved.
+    </p>
+    <nav>
+     <ul class="flex space-x-6 text-lg">
+      <li>
+       <a class="hover-underline" href="privacy_policy.html">
+        Privacy Policy
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="terms_of_service.html">
+        Terms of Service
+       </a>
+      </li>
+      <li>
+       <a class="hover-underline" href="faq.html">
+        FAQ
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </footer>
+  <!-- Add FontAwesome for Social Media Icons -->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/a076d05399.js">
+  </script>
+  <script>
+   function smoothScroll() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+ </body>
+</html>

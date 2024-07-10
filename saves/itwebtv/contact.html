@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Contact Us - IT WebTV
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+   .gradient-bg {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb, #3b82f6);
+        }
+        .navbar {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a:hover {
+            color: #ffdd57;
+            transition: color 0.3s;
+        }
+        .form-container {
+            background: linear-gradient(135deg, #2b5876, #4e4376), url('https://placehold.co/1600x900');
+            padding: 3rem;
+            border-radius: 0.5rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+        .input-field:hover {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .map-container {
+            border: 2px solid #3b82f6;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            padding: 2rem;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+  </style>
+ </head>
+ <body class="gradient-bg text-white font-sans">
+  <!-- Navbar -->
+  <nav class="navbar flex justify-between items-center p-6">
+   <a class="text-2xl font-bold" href="index.html">
+    IT WebTV
+   </a>
+   <div class="space-x-4">
+    <a class="hover:text-yellow-400" href="index.html">
+     Home
+    </a>
+    <a class="hover:text-yellow-400" href="about.html">
+     About Us
+    </a>
+    <a class="hover:text-yellow-400" href="videos.html">
+     Videos
+    </a>
+   </div>
+  </nav>
+  <!-- Main Content -->
+  <div class="container mx-auto my-12 p-6 form-container">
+   <h1 class="text-4xl font-bold mb-6 text-center">
+    Contact Us
+   </h1>
+   <form class="space-y-6" id="contactForm">
+    <div class="tooltip">
+     <label class="block text-lg" for="name">
+      Name
+     </label>
+     <input class="input-field w-full p-3 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none" id="name" name="name" required="" type="text"/>
+     <span class="tooltiptext">
+      Enter your full name
+     </span>
+    </div>
+    <div class="tooltip">
+     <label class="block text-lg" for="email">
+      Email
+     </label>
+     <input class="input-field w-full p-3 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none" id="email" name="email" required="" type="email"/>
+     <span class="tooltiptext">
+      Enter a valid email address
+     </span>
+    </div>
+    <div class="tooltip">
+     <label class="block text-lg" for="subject">
+      Subject
+     </label>
+     <input class="input-field w-full p-3 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none" id="subject" name="subject" required="" type="text"/>
+     <span class="tooltiptext">
+      Enter the subject of your message
+     </span>
+    </div>
+    <div class="tooltip">
+     <label class="block text-lg" for="message">
+      Message
+     </label>
+     <textarea class="input-field w-full p-3 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none" id="message" name="message" required="" rows="5"></textarea>
+     <span class="tooltiptext">
+      Enter your message here
+     </span>
+    </div>
+    <div class="flex justify-between">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300" onclick="submitForm()" type="button">
+      Submit
+     </button>
+     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300" onclick="resetForm()" type="button">
+      Reset
+     </button>
+    </div>
+   </form>
+   <div class="mt-12">
+    <h2 class="text-3xl font-bold mb-4">
+     Our Location
+    </h2>
+    <div class="w-full h-64 bg-gray-700 rounded-lg map-container" id="map">
+     <img alt="Placeholder for map" class="w-full h-full object-cover" height="400" src="img_10.png" width="600"/>
+    </div>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="footer text-center">
+   <div class="flex justify-center space-x-4 mb-4">
+    <a class="hover:text-gray-400" href="#">
+     <img alt="Facebook Icon" height="24" src="img_9.png" width="24"/>
+    </a>
+    <a class="hover:text-gray-400" href="#">
+     <img alt="Twitter Icon" height="24" src="img_7.png" width="24"/>
+    </a>
+    <a class="hover:text-gray-400" href="#">
+     <img alt="LinkedIn Icon" height="24" src="img_11.png" width="24"/>
+    </a>
+   </div>
+   <p>
+    © 2023 IT WebTV. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   function submitForm() {
+            alert('Form submitted successfully!');
+        }
+
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+        }
+
+        function initMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+
+        function loadScript() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap";
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+  </script>
+ </body>
+</html>

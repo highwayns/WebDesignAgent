@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Application Form
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.4/dist/cdn.min.js">
+  </script>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above the text */
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white">
+  <div class="container mx-auto px-4 py-8">
+   <!-- Header -->
+   <header class="text-center mb-8">
+    <img alt="Application Form Banner" class="mx-auto mb-4 rounded-lg shadow-lg" height="200" src="img_8.png" width="600"/>
+    <h1 class="text-5xl font-bold drop-shadow-lg animate-pulse">
+     Application Form
+    </h1>
+    <p class="text-xl mt-2">
+     Apply for admission by filling out the form below
+    </p>
+   </header>
+   <!-- Progress Bar -->
+   <div class="w-full bg-gray-300 rounded-full h-2.5 mb-8">
+    <div class="bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full" style="width: 50%;">
+    </div>
+   </div>
+   <!-- Form Section -->
+   <form class="space-y-8" id="applicationForm">
+    <!-- Personal Information -->
+    <section class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg">
+     <h2 class="text-3xl font-semibold mb-4">
+      Personal Information
+     </h2>
+     <div class="grid gap-6 md:grid-cols-2">
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="firstName">
+        First Name
+        <span class="tooltiptext">
+         Enter your first name
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="firstName" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="lastName">
+        Last Name
+        <span class="tooltiptext">
+         Enter your last name
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="lastName" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="email">
+        Email
+        <span class="tooltiptext">
+         Enter your email address
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="email" required="" type="email"/>
+      </div>
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="phone">
+        Phone Number
+        <span class="tooltiptext">
+         Enter your phone number
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="phone" required="" type="tel"/>
+      </div>
+     </div>
+    </section>
+    <!-- Educational Background -->
+    <section class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg">
+     <h2 class="text-3xl font-semibold mb-4">
+      Educational Background
+     </h2>
+     <div class="grid gap-6 md:grid-cols-2">
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="highSchool">
+        High School
+        <span class="tooltiptext">
+         Enter your high school name
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="highSchool" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="graduationYear">
+        Year of Graduation
+        <span class="tooltiptext">
+         Enter your graduation year
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="graduationYear" required="" type="number"/>
+      </div>
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="gpa">
+        GPA
+        <span class="tooltiptext">
+         Enter your GPA
+        </span>
+       </label>
+       <input class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="gpa" required="" type="text"/>
+      </div>
+     </div>
+    </section>
+    <!-- Course Selection -->
+    <section class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg">
+     <h2 class="text-3xl font-semibold mb-4">
+      Course Selection
+     </h2>
+     <div class="grid gap-6 md:grid-cols-2">
+      <div>
+       <label class="block text-sm font-medium mb-2 tooltip" for="preferredCourse">
+        Preferred Course
+        <span class="tooltiptext">
+         Select your preferred course
+        </span>
+       </label>
+       <select class="w-full px-3 py-2 bg-white text-gray-900 rounded-md shadow-sm focus:ring focus:ring-indigo-500" id="preferredCourse" required="">
+        <option value="">
+         Select a course
+        </option>
+        <option value="course1">
+         Course 1
+        </option>
+        <option value="course2">
+         Course 2
+        </option>
+        <option value="course3">
+         Course 3
+        </option>
+       </select>
+      </div>
+     </div>
+    </section>
+    <!-- Buttons -->
+    <div class="flex space-x-4">
+     <button class="px-6 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 hover:scale-105 transform transition duration-300 ease-in-out flex items-center" type="submit">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Submit
+     </button>
+     <button class="px-6 py-2 bg-yellow-500 text-white rounded-md shadow-md hover:bg-yellow-600 hover:scale-105 transform transition duration-300 ease-in-out flex items-center" onclick="saveFormProgress()" type="button">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M5 12h14m-7-7v14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Save for Later
+     </button>
+     <button class="px-6 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600 hover:scale-105 transform transition duration-300 ease-in-out flex items-center" onclick="clearFormFields()" type="button">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Clear Form
+     </button>
+    </div>
+   </form>
+   <!-- Links -->
+   <div class="mt-8 space-x-4 text-center">
+    <a class="text-blue-200 hover:underline hover:text-blue-400 transition duration-300 ease-in-out" href="index.html">
+     Back to Home
+    </a>
+    <a class="text-blue-200 hover:underline hover:text-blue-400 transition duration-300 ease-in-out" href="help.html">
+     Help
+    </a>
+   </div>
+   <!-- Footer -->
+   <footer class="mt-12 text-center text-sm text-blue-200">
+    <p>
+     © 2023 Application Form. All rights reserved.
+    </p>
+   </footer>
+  </div>
+  <script>
+   function saveFormProgress() {
+      alert('Form progress saved!');
+    }
+
+    function clearFormFields() {
+      document.getElementById('applicationForm').reset();
+    }
+
+    const imageInfo = {
+      imgsrc: "search.png",
+      alt: "This is an example image",
+      width: 600,
+      height: 400,
+      title: "Example image title",
+    }
+  </script>
+ </body>
+</html>

@@ -13,7 +13,7 @@ import random
 from prompts import *
 
 class WebDesignAgent(BaseAgent):
-    def __init__(self, model="gpt4o-0513",save_file = "saves/",**kwargs) -> None:
+    def __init__(self, model="gpt-4o",save_file = "saves/",**kwargs) -> None:
         super().__init__(model)
         self.task = {"img":None,"text":None}
         self.task_queue = []
