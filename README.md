@@ -139,6 +139,7 @@ Following steps 1-7 in **Auto Generation** to get the automatically generated pl
 
 ### 2. Run in terminal
 ```bash
+source ./venv/bin/activate
 python webdesign.py --save_file "saves/shopping/" --text "a shopping website"  --refine_times 2
 ```
 

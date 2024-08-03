@@ -530,9 +530,9 @@ class Application(tk.Tk):
     def update_cost(self):
         with open("logs/token.json", "r") as f:
             tokens = json.load(f)
-        current_prompt_cost = tokens["gpt4o-0513"][0]
-        current_completion_cost = tokens["gpt4o-0513"][1]
-        current_del_cost = tokens["dalle3"]
+        current_prompt_cost = tokens["gpt-4o"][0]
+        current_completion_cost = tokens["gpt-4o"][1]
+        current_del_cost = tokens["dall-e-3"]
         total_prompt_cost = current_prompt_cost - self.begin_prompt_cost
         total_completion_cost = current_completion_cost - self.begin_completion_cost
         self.total_cost = cal_cost(total_prompt_cost, total_completion_cost)
