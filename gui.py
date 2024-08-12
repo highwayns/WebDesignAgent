@@ -74,9 +74,9 @@ class Application(tk.Tk):
         self.begin_time = time.time()
         with open("logs/token.json", "r") as f:
             tokens = json.load(f)
-        self.begin_prompt_cost = tokens["gpt4o-0513"][0]
-        self.begin_completion_cost = tokens["gpt4o-0513"][1]
-        self.begin_dell_cost = tokens["dalle3"]
+        self.begin_prompt_cost = tokens["gpt-4o"][0]
+        self.begin_completion_cost = tokens["gpt-4o"][1]
+        self.begin_dell_cost = tokens["dall-e-3"]
         self.total_cost = 0
         self.time_cost = 0
         self.img_ref = None     
